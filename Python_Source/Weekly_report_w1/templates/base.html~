@@ -1,0 +1,48 @@
+{% block head %}
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<link href="{{ url_for('static', filename = 'css/bootstrap.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename = 'css/bootstrap-table.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename = 'css/main.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename = 'css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">
+<script src="{{ url_for('static', filename = 'js/jquery-1.11.2.min.js') }}"></script> 
+<script src="{{ url_for('static', filename = 'js/bootstrap.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/bootstrap-table.js') }}"></script> 
+<script src="{{ url_for('static', filename = 'js/bootstrap-modal.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/bootstrap-datetimepicker.min.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/bootstrap-datetimepicker.zh-CN.js') }}" charset="UTF-8"></script>
+{% block style %}
+{% endblock %}
+</head>
+{% endblock %}
+
+{% block body %}
+<body>
+<div class="col-lg-10 col-lg-offset-1">
+<br/>
+<label>你好，{% if name %}{{ name }}！{% else %} 未登录用户 {% endif%}&nbsp;&nbsp;&nbsp;<a class="label label-default" href="/">退出</a></label>
+<div id="custom-toolbar">
+    <div class="form-inline" role="form">
+		<a type="button" href="/" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-home"> 主页</span></a>
+        <a type="button" href="new.html" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-plus"> 新建</span></a>
+        <!--a type="button" onclick="add_note()" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-import">导入</span></a-->
+    </div>
+</div>
+<br/>
+{% block content %}
+<div class="row">
+<div class="col-md-1"></div>
+<div class="col-md-10">
+<h1>Hello World!</h1>
+</div>
+<div class="col-md-1"></div>
+</div>
+<div class="container">
+    {% block page_content %}{% endblock %}
+</div>
+{% endblock %}
+
+</body>
+{% endblock %}
+</html>

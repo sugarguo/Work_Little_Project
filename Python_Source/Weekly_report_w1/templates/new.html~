@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="row">
+	<div class="col-md-1"></div>
+	<div class="col-md-10">
+	<form method="POST">
+	{{ form.hidden_tag() }}
+		<h2 class="page-header">新建记录内容</h2>
+		<label>主任务名:</label>
+		{{ form.project(class="form-control",placeholder="不能为空！") }}
+		<br />
+		<label>子任务名:</label>
+		{{ form.branch(class="form-control",placeholder="不能为空！") }}
+		<br />
+		<label>完成时间:</label>
+		{{ form.date(type="date"),placeholder="不能为空！" }}
+		<br />
+		<label>工作类型:</label>
+		{{ form.worktype() }}
+		<br />
+		<label>工作时间:</label>
+		{{ form.workload(class="form-control",placeholder="不能为空！") }}
+		<br />
+		<label>工作内容:</label>
+		{{ form.commit(class="form-control") }}
+		<br />
+		{{ form.submit(class="btn btn-lg btn-danger col-lg-2 col-lg-offset-10", style="margin-top:20px;") }}
+	</form>
+	</div>
+	<div class="col-md-1"></div>
+{% for message in get_flashed_messages() %}
+<div class="alert alert-warning">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    {{ message }}
+{% endfor %}
+</div>
+
+{% endblock %}
