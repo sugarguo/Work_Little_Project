@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>DoubleLink: 全局定义</title>
+<title>DoubleLink: 待办事项列表</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -46,9 +46,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>首页</span></a></li>
-      <li><a href="pages.html"><span>相关页面</span></a></li>
+      <li class="current"><a href="pages.html"><span>相关页面</span></a></li>
       <li><a href="annotated.html"><span>结构体</span></a></li>
-      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -67,20 +67,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
       </li>
     </ul>
   </div>
-  <div id="navrow2" class="tabs2">
-    <ul class="tablist">
-      <li><a href="files.html"><span>文件列表</span></a></li>
-      <li class="current"><a href="globals.html"><span>全局定义</span></a></li>
-    </ul>
-  </div>
-  <div id="navrow3" class="tabs2">
-    <ul class="tablist">
-      <li><a href="globals.html"><span>全部</span></a></li>
-      <li><a href="globals_func.html"><span>函数</span></a></li>
-      <li><a href="globals_vars.html"><span>变量</span></a></li>
-      <li class="current"><a href="globals_type.html"><span>类型定义</span></a></li>
-    </ul>
-  </div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -93,7 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('globals_type.html','');});
+$(document).ready(function(){initNavTree('todo.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -110,14 +96,66 @@ $(document).ready(function(){initNavTree('globals_type.html','');});
 </iframe>
 </div>
 
+<div class="header">
+  <div class="headertitle">
+<div class="title">待办事项列表 </div>  </div>
+</div><!--header-->
 <div class="contents">
-&#160;<ul>
-<li>DLNode
-: <a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DoubleLink.c</a>
-, <a class="el" href="_double_link_8h.html#a9fcabae42ec5545a4c8f778a68a4e578">DoubleLink.h</a>
-</li>
-</ul>
-</div><!-- contents -->
+<div class="textblock"><dl class="reflist">
+<dt><a class="anchor" id="_todo000025"></a>全局 <a class="el" href="_get_opt_test_8c.html#a97dc5d244dcdb842fab654a276322639">convert_document</a>  (void)</dt>
+<dd>null  </dd>
+<dt><a class="anchor" id="_todo000001"></a>全局 <a class="el" href="_double_link_8c.html#aec0d0b1312b68b305a5ec9cd4ae3c6c3">CreateList</a>  ()</dt>
+<dd><p class="startdd">null </p>
+<p class="enddd">null  </p>
+</dd>
+<dt><a class="anchor" id="_todo000006"></a>全局 <a class="el" href="_double_link_8c.html#aa397cd5b88823e339f63a646497bd260">DeleteList</a>  (DLNode *List, void *data, int(*CallBackCmp)(const void *, const void *))</dt>
+<dd><p class="startdd">null </p>
+<p class="enddd">null  </p>
+</dd>
+<dt><a class="anchor" id="_todo000024"></a>全局 <a class="el" href="_get_opt_test_8c.html#acf5088e61b616f77674f62a9ba3b86b7">display_usage</a>  (void)</dt>
+<dd>null  </dd>
+<dt><a class="anchor" id="_todo000008"></a>全局 <a class="el" href="_double_link_8c.html#a15364937ad58d693d28671f21106d2ec">DropList</a>  (DLNode *List)</dt>
+<dd><p class="startdd">null </p>
+<p class="enddd">null  </p>
+</dd>
+<dt><a class="anchor" id="_todo000022"></a>全局 <a class="el" href="_get_opt_test_8c.html#ae823682b8b86c3bd035fdb849e4f3d1f">GetFileContent</a>  (DLNode *List)</dt>
+<dd>按字节读入，准确率MAX，效率LOW  </dd>
+<dt><a class="anchor" id="_todo000023"></a>全局 <a class="el" href="_get_opt_test_8c.html#ab891633b1638654bdb2820c40f2cb6af">GetStatistics</a>  (int hflag, int sflag, int oflag)</dt>
+<dd>null  </dd>
+<dt><a class="anchor" id="_todo000004"></a>全局 <a class="el" href="_double_link_8c.html#a3c75e226a401f131a4808dd22b234cca">InsertList</a>  (DLNode *List, void *data)</dt>
+<dd><p class="startdd">null </p>
+<p class="enddd">null  </p>
+</dd>
+<dt><a class="anchor" id="_todo000026"></a>全局 <a class="el" href="_get_opt_test_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>  (int argc, char **argv)</dt>
+<dd>null  </dd>
+<dt><a class="anchor" id="_todo000002"></a>全局 <a class="el" href="_double_link_8c.html#ae1482f414cdc6afe58c99a2615487057">SearchList</a>  (DLNode *List, void *data, int(*CallBackCmp)(const void *, const void *))</dt>
+<dd><p class="startdd">null </p>
+<p class="enddd">null  </p>
+</dd>
+<dt><a class="anchor" id="_todo000003"></a>全局 <a class="el" href="_double_link_8c.html#a65b4c249cc137b01fc07b9f7ffbcf46e">SequenceList</a>  (DLNode *List, int flag, int(*CallBackCmp)(const void *, const void *))</dt>
+<dd><p class="startdd">null </p>
+<p class="enddd">null  </p>
+</dd>
+<dt><a class="anchor" id="_todo000017"></a>全局 <a class="el" href="_get_opt_test_8c.html#a30c26ca0e13ccfaaeb18bbb24eea0217">ShowLine</a>  (char *filename)</dt>
+<dd>未整合到主程序，耗费系统资源  </dd>
+<dt><a class="anchor" id="_todo000007"></a>全局 <a class="el" href="_double_link_8c.html#a127d2524a910989b06852dea39a6c86f">ShowList</a>  (DLNode *List, int flag, int judge)</dt>
+<dd><p class="startdd">null </p>
+<p class="enddd">null  </p>
+</dd>
+<dt><a class="anchor" id="_todo000021"></a>全局 <a class="el" href="_get_opt_test_8c.html#a0dc3570bdc3b5e6b422cf4081976afff">StatisticsContent</a>  (DLNode *List)</dt>
+<dd>有显示和写文件俩个函数，待整合  </dd>
+<dt><a class="anchor" id="_todo000020"></a>全局 <a class="el" href="_get_opt_test_8c.html#a8622568f1e4ea1d7db998a346f8e68e7">StatisticsShow</a>  (DLNode *List)</dt>
+<dd>有显示和写文件俩个函数，待整合  </dd>
+<dt><a class="anchor" id="_todo000005"></a>全局 <a class="el" href="_double_link_8c.html#af42f761136d59421fe531e5f53db7d22">UpdateList</a>  (DLNode *List, void *data_search, void *data_change, int(*CallBackCmp)(const void *, const void *))</dt>
+<dd><p class="startdd">null </p>
+<p class="enddd">null  </p>
+</dd>
+<dt><a class="anchor" id="_todo000019"></a>全局 <a class="el" href="_get_opt_test_8c.html#a8e8214da72e3d59826ecc3d59a7485f4">VS_StrLTrim</a>  (char *pStr)</dt>
+<dd>null  </dd>
+<dt><a class="anchor" id="_todo000018"></a>全局 <a class="el" href="_get_opt_test_8c.html#a550c7ba0830bea9bb19ab64ee947d5e3">VS_StrRTrim</a>  (char *pStr)</dt>
+<dd>null </dd>
+</dl>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

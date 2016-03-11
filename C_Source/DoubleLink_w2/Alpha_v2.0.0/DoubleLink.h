@@ -9,10 +9,17 @@
 * @copyright	EmbedWay 恒为科技武汉研发中心 By:Sugarguo
 */
 
+
 #ifndef __DOUBLELINK_H__
 #define __DOUBLELINK_H__
 
-///@brief 定义双向链表的结构体
+
+/**
+* @brief 定义双向链表的结构体
+* @param[in]	*data	双向链表中的数据
+* @param[in]	*back	返回指针
+* @param[in]	*next	前进指针
+*/
 typedef struct _DoubleLink
 {
 	void *data; ///<双向链表中的数据
@@ -20,11 +27,27 @@ typedef struct _DoubleLink
 	struct _DoubleLink *next;  ///<双向链表的后区
 }DLNode;
 
+
 /**
-* CreateList	创建双向链表
-* @return		返回值为List 为DLNode的空链表，首尾相连
-*/
+ * @brief CreateList \n
+ * 创建双向链表
+ * @date   2016-03-11
+ * @author Sugarguo
+ * @param  : 参数说明如下表：
+ * name      | type      |description of param 
+ * ----------|-----------|--------------------
+ * null      | null      |null
+ * @return    返回值说明如下：
+ * name      | type      | description of value
+ * ----------|-----------|----------------------
+ * *List     | DLNode    |双向链表默认链表接口
+ * @warning   null
+ * @attention null
+ * @note      创建双向链表,返回指针
+ * @todo      null
+ */
 DLNode *CreateList();
+
 
 /**
 * @brief CallBackCmpInt \n
@@ -35,6 +58,7 @@ DLNode *CreateList();
 */
 int CallBackCmpInt(const void *one, const void *two);
 
+
 /**
 * @brief CallBackCmpChar \n
 * 回调函数，比较内容是否相同
@@ -43,6 +67,7 @@ int CallBackCmpInt(const void *one, const void *two);
 * @return		返回值为两个字母比较结果
 */
 int CallBackCmpChar(const void *one, const void *two);
+
 
 /**
 * @brief CallBackCmpStr \n
@@ -53,6 +78,7 @@ int CallBackCmpChar(const void *one, const void *two);
 */
 int CallBackCmpStr(const void *one, const void *two);
 
+
 /**
 * @brief CallBackCmpStr_K \n
 * 回调函数，比较内容是否相同
@@ -62,6 +88,7 @@ int CallBackCmpStr(const void *one, const void *two);
 */
 int CallBackCmpStr_K(const void *one, const void *two);
 
+
 /**
 * @brief CallBackShow \n
 * 回调函数，显示内容
@@ -69,6 +96,7 @@ int CallBackCmpStr_K(const void *one, const void *two);
 * @param[in]	flag		提供接口，flag = 0: int显示 1: char字符显示 2: char * 字符串显示
 */
 int CallBackShow(void *one, int flag);
+
 
 /**
 * @brief  Partition\n
@@ -80,6 +108,7 @@ int CallBackShow(void *one, int flag);
 */
 static DLNode *Partion(DLNode * List, DLNode * p_one, DLNode * p_two, int (*CallBackCmp)(const void *, const void *));
 
+
 /**
 * @brief  QuickSort\n
 * 快速排序 
@@ -90,66 +119,163 @@ static DLNode *Partion(DLNode * List, DLNode * p_one, DLNode * p_two, int (*Call
 */
 static void QuickSort(DLNode * List, DLNode * p_one, DLNode * p_two, int (*CallBackCmp)(const void *, const void *));
 
+
 /**
-* @brief SearchList \n
-* 查询双向链表，通过给定的默认双向链表，判断数据以及数据地址是否存在
-* @param[in]	*List					双向链表默认链表接口
-* @param[in]	*data					需要查询的无类型数据指针
-* @param[in]	*CallBackCmp			各种类型的回调函数接口
-*/
+ * @brief SearchList \n
+ * 查询双向链表，通过给定的默认双向链表，判断数据以及数据地址是否存在
+ * @date   2016-03-11
+ * @author Sugarguo
+ * @param  : 参数说明如下表：
+ * name      | type      |description of param 
+ * ----------|-----------|--------------------
+ * *List       | DLNode    |双向链表默认链表接口
+ * *data       | void      |需要查询的数据指针
+ * *CallBackCmp| int       |判断回调函数
+ * @return    返回值说明如下：
+ * name      | type      | description of value
+ * ----------|-----------|----------------------
+ * null      | null      | null
+ * @warning   null
+ * @attention null
+ * @note      查询双向链表，通过给定的默认双向链表，判断数据以及数据地址是否存在
+ * @todo      null
+ */
 DLNode *SearchList(DLNode *List, void *data, int (*CallBackCmp)(const void *, const void *));
 
+
 /**
-* @brief SequenceList \n
-* 排列双向链表函数通过flag的flag，选择合适的排序方法
-* @param[in]	*List			双向链表默认链表接口
-* @param[in]	flag			提供接口，让用户定义具体比较函数 flag = 0: 采用冒泡排序 1: 系统快排 2: 自写快排（默认采用）
-* @param[in]	*CallBackCmp	各种类型的回调函数接口
-*/
+ * @brief SequenceList \n
+ * 排列双向链表函数通过flag的flag，选择合适的排序方法
+ * @date   2016-03-11
+ * @author Sugarguo
+ * @param  : 参数说明如下表：
+ * name      | type      |description of param 
+ * ----------|-----------|--------------------
+ * *List       | DLNode    |双向链表默认链表接口
+ * flag        | int       |采用排序方法的flag
+ * *CallBackCmp| int       |判断回调函数
+ * @return    返回值说明如下：
+ * name      | type      | description of value
+ * ----------|-----------|----------------------
+ * null      | null      | null
+ * @warning   null
+ * @attention 0： 为冒泡排序，耗费较多资源；1： 系统快排，最快 2： 自写快排
+ * @note      排列双向链表函数通过flag的flag，选择合适的排序方法
+ * @todo      null
+ */
 DLNode *SequenceList(DLNode *List, int flag, int (*CallBackCmp)(const void *,const void *));
 
+
 /**
-* @brief InsertList \n
-* 插入双向链表，根据双向链表的接口插入数据
-* @param[in]	*List		双向链表默认链表接口
-* @param[in]	*data		需要插入的无类型数据指针
-*/
+ * @brief InsertList \n
+ * 插入双向链表，根据双向链表的接口插入数据
+ * @date   2016-03-11
+ * @author Sugarguo
+ * @param  : 参数说明如下表：
+ * name      | type      |description of param 
+ * ----------|-----------|--------------------
+ * *List     | DLNode    |双向链表默认链表接口
+ * *data     | void      |需要插入的数据指针
+ * @return    返回值说明如下：
+ * name      | type      | description of value
+ * ----------|-----------|----------------------
+ * null      | null      | null
+ * @warning   null
+ * @attention null
+ * @note      插入双向链表，根据双向链表的接口插入数据
+ * @todo      null
+ */
 void InsertList(DLNode *List, void *data);
 
+
 /**
-* @brief UpdateList \n
-* 更新双向链表，通过查询原始的节点位置，修改数据
-* @param[in]	*List				双向链表默认链表接口
-* @param[in]	*data_search		需要被更新的初始无类型数据指针
-* @param[in]	*data_change		需要更新的无类型数据指针
-* @param[in]	*CallBackCmp		各种类型的回调函数接口
-*/
+ * @brief UpdateList \n
+ * 更新双向链表，通过查询原始的节点位置，修改数据
+ * @date   2016-03-11
+ * @author Sugarguo
+ * @param  : 参数说明如下表：
+ * name      | type      |description of param 
+ * ----------|-----------|--------------------
+ * *List       | DLNode    |双向链表默认链表接口
+ * *data_search| void      |需要查询的数据指针
+ * *data_change| void      |需要修改的数据指针
+ * *CallBackCmp| int       |判断回调函数
+ * @return    返回值说明如下：
+ * name      | type      | description of value
+ * ----------|-----------|----------------------
+ * null      | null      | null
+ * @warning   更新节点操作，一经操作无法返回，慎用！
+ * @attention null
+ * @note      更新双向链表，通过查询原始的节点位置，修改数据
+ * @todo      null
+ */
 void UpdateList(DLNode *List, void *data_search, void *data_change, int (*CallBackCmp)(const void *, const void *));
 
+
 /**
-* @brief DeleteList \n
-* 删除双向链表，查询节点位置，将前后地址相连接，然后free此节点位置
-* @param[in]	*List			双向链表默认链表接口
-* @param[in]	*data			需要被删除的无类型数据指针
-* @param[in]	*CallBackCmp	各种类型的回调函数接口
-*/
+ * @brief DeleteList \n
+ * 删除双向链表，查询节点位置，将前后地址相连接，然后free此节点位置
+ * @date   2016-03-11
+ * @author Sugarguo
+ * @param  : 参数说明如下表：
+ * name      | type      |description of param 
+ * ----------|-----------|--------------------
+ * *List       | DLNode    |双向链表默认链表接口
+ * *data       | void      |显示格式flag
+ * *CallBackCmp| int       |判断回调函数
+ * @return    返回值说明如下：
+ * name      | type      | description of value
+ * ----------|-----------|----------------------
+ * null      | null      | null
+ * @warning   删除节点操作，一经操作无法返回，慎用！
+ * @attention null
+ * @note      删除双向链表，查询节点位置，将前后地址相连接，然后free此节点位置
+ * @todo      null
+ */
 void DeleteList(DLNode *List, void *data, int (*CallBackCmp)(const void *, const void *));
 
-/**
-* @brief ShowList \n
-* 遍历双向链表
-* @param[in]	*List	双向链表默认链表接口
-* @param[in]	flag	提供接口，flag = 0: int显示 1: char字符显示 2: char * 字符串显示
-* @param[in]	judge	提供接口，judge = 1: 不显示遍历结果  !=1: 显示遍历结果
-* @return		返回值为遍历结果，有多少个
-*/
-int ShowList(DLNode *List, int flag, int judge);
 
 /**
-* @brief DropList \n
-* 删除双向链表，全部删除，释放内存空间
-* @param[in]	*List	双向链表默认链表接口
-*/
+ * @brief ShowList \n
+ * 遍历双向链表，根据flag选择显示格式，根据judge选择是否输出遍历结果
+ * @date   2016-03-11
+ * @author Sugarguo
+ * @param  : 参数说明如下表：
+ * name      | type      |description of param 
+ * ----------|-----------|--------------------
+ * *List     | DLNode    |双向链表默认链表接口
+ * flag      | int       |显示格式flag
+ * judge     | int       |是否显示flag
+ * @return    返回值说明如下：
+ * name      | type      | description of value
+ * ----------|-----------|----------------------
+ * nodenum   | int       | 返回链表长度
+ * @warning   null
+ * @attention null
+ * @note      遍历双向链表，根据flag选择显示格式，根据judge选择是否输出遍历结果
+ * @todo      null
+ */
+int ShowList(DLNode *List, int flag, int judge);
+
+
+/**
+ * @brief DropList \n
+ * 删除双向链表，全部删除，释放内存空间
+ * @date   2016-03-11
+ * @author Sugarguo
+ * @param  : 参数说明如下表：
+ * name      | type      |description of param 
+ * ----------|-----------|--------------------
+ * *List     | DLNode    |双向链表默认链表接口
+ * @return    返回值说明如下：
+ * name      | type      | description of value
+ * ----------|-----------|----------------------
+ * null      | null      | null
+ * @warning   此操作会清空双向链表的数据，系统暂存空间
+ * @attention null
+ * @note      此操作会清空双向链表的数据，系统暂存空间,谨慎操作
+ * @todo      null
+ */
 void DropList(DLNode *List);
 
 #endif

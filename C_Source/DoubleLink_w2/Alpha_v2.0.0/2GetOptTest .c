@@ -35,23 +35,11 @@ struct globalArgs_t{
 static const char *optString = "hplso:v?";
 
 /**
- * @brief ShowLine \n
- * 显示文件或者返回行数
- * @date   2016-03-11
- * @author Sugarguo
- * @param  : 参数说明如下表：
- * name      | type      |description of param 
- * ----------|-----------|--------------------
- * *filename | char      |输入的文件名
- * @return    返回值说明如下：
- * name      | type     | description of value
- * ----------|----------|----------------------
- * null      | int      | 0
- * @warning   该接口单独遍历文件，耗费系统资源
- * @attention 该接口单独遍历文件，耗费系统资源
- * @note      文件遍历读取行号，可修改为显示文件内容
- * @todo      未整合到主程序，耗费系统资源
- */
+* @brief ShowLine \n
+* 显示文件或者返回行数
+* @param[in]	*filename	比较的第一个内容
+* @return		返回值
+*/
 int ShowLine(char *filename)
 {
 	FILE *fp;
@@ -71,23 +59,10 @@ int ShowLine(char *filename)
 }
 
 /**
- * @brief VS_StrRTrim \n
- * 去除字符串右边空格
- * @date   2016-03-11
- * @author Sugarguo
- * @param  : 参数说明如下表：
- * name      | type      |description of param 
- * ----------|-----------|--------------------
- * *pStr     | char      |输入的字符串
- * @return    返回值说明如下：
- * name      | type      | description of value
- * ----------|-----------|----------------------
- * null      | null      | null
- * @warning   null
- * @attention 该接口需要传入字符串指针
- * @note      传入字符串指针，去除字符串右边空格
- * @todo      null
- */
+* @brief VS_StrRTrim \n
+* 去除字符串右边空格
+* @param[in]	*pStr		需要处理的字符串
+*/ 
 void VS_StrRTrim(char *pStr)  
 {  
     char *pTmp = pStr+strlen(pStr)-1;  
@@ -98,25 +73,12 @@ void VS_StrRTrim(char *pStr)
         pTmp--;  
     }  
 }  
-
+ 
 /**
- * @brief VS_StrLTrim \n
- * 去除字符串左边空格
- * @date   2016-03-11
- * @author Sugarguo
- * @param  : 参数说明如下表：
- * name      | type      |description of param 
- * ----------|-----------|--------------------
- * *pStr     | char      |输入的字符串
- * @return    返回值说明如下：
- * name      | type      | description of value
- * ----------|-----------|----------------------
- * null      | null      | null
- * @warning   null
- * @attention 该接口需要传入字符串指针
- * @note      传入字符串指针，去除字符串左边空格
- * @todo      null
- */
+* @brief VS_StrLTrim \n
+* 去除字符串左边空格
+* @param[in]	*pStr		需要处理的字符串
+*/
 void VS_StrLTrim(char *pStr)  
 {  
     char *pTmp = pStr;  
@@ -136,26 +98,13 @@ void VS_StrLTrim(char *pStr)
 }
 
 /**
- * @brief StatisticsShow \n
- * 统计词频，仅显示获取词频结果，不写入文件
- * @date   2016-03-11
- * @author Sugarguo
- * @param  : 参数说明如下表：
- * name      | type      |description of param 
- * ----------|-----------|--------------------
- * *List     | DLNode    |输入的双向链表指针
- * @return    返回值说明如下：
- * name      | type      | description of value
- * ----------|-----------|----------------------
- * null      | null      | null
- * @warning   null
- * @attention 该接口需要传入双向链表指针
- * @note      传入双向链表指针，仅显示获取词频结果，不写入文件
- * @todo      有显示和写文件俩个函数，待整合
- */
-DLNode *StatisticsShow(DLNode *List)
+* @brief StatisticsShow \n
+* 仅显示，不写入文件
+* @param[in]	*List					双向链表默认链表接口
+*/
+N *StatisticsShow(N *List)
 {
-	DLNode *p = NULL;
+	N *p = NULL;
 	int i = 1;
 
 	p = List->next;
@@ -176,27 +125,14 @@ DLNode *StatisticsShow(DLNode *List)
 }
 
 /**
- * @brief StatisticsContent \n
- * 统计词频，不显示获取词频结果，写入文件
- * @date   2016-03-11
- * @author Sugarguo
- * @param  : 参数说明如下表：
- * name      | type      |description of param 
- * ----------|-----------|--------------------
- * *List     | DLNode    |输入的双向链表指针
- * @return    返回值说明如下：
- * name      | type      | description of value
- * ----------|-----------|----------------------
- * null      | null      | null
- * @warning   null
- * @attention 该接口需要传入双向链表指针
- * @note      传入双向链表指针，不显示获取词频结果，写入文件
- * @todo      有显示和写文件俩个函数，待整合
- */
-DLNode *StatisticsContent(DLNode *List)
+* @brief StatisticsContent \n
+* 统计词频,并写入文件
+* @param[in]	*List		双向链表默认链表接口
+*/
+N *StatisticsContent(N *List)
 {
 	FILE *fp = NULL;
-	DLNode *p = NULL;
+	N *p = NULL;
 	int i = 1;
 
 	if(((fp = fopen(globalArgs.outfilename,"w")) == NULL))
@@ -227,24 +163,13 @@ DLNode *StatisticsContent(DLNode *List)
 }
 
 /**
- * @brief GetFileContent \n
- * 获取文件内容，按字符读入，以a-z&&A-Z为判断条件选取单词
- * @date   2016-03-11
- * @author Sugarguo
- * @param  : 参数说明如下表：
- * name      | type      |description of param 
- * ----------|-----------|--------------------
- * *List     | DLNode    |输入的双向链表指针
- * @return    返回值说明如下：
- * name      | type      | description of value
- * ----------|-----------|----------------------
- * null      | null      | null
- * @warning   按字节读入，准确率MAX，效率LOW
- * @attention 该接口需要传入双向链表指针
- * @note      传入双向链表指针，读取文件并写到双向链表中
- * @todo      按字节读入，准确率MAX，效率LOW
- */
-DLNode *GetFileContent(DLNode *List)
+* @brief GetFileContent \n
+* 回调函数，比较内容是否相同
+* @param[in]	*one	比较的第一个内容
+* @param[in]	*two	比较的第二个内容
+* @return		返回值为两个数的减法结果，根据等于大小零判断
+*/
+N *GetFileContent(N *List)
 {
 	FILE *novelfile;
 	int i = 0, word = 0;
@@ -277,7 +202,7 @@ DLNode *GetFileContent(DLNode *List)
 				VS_StrLTrim(str);
 				VS_StrRTrim(str);
 				strcpy(wordstr,str);
-				InsertList(List,(void *)wordstr);
+				add(List,(void *)wordstr);
 				i = 0;
 				memset(str,'\0',sizeof(str));
 			}
@@ -288,38 +213,18 @@ DLNode *GetFileContent(DLNode *List)
 }
 
 /**
- * @brief GetStatistics \n
- * 词频统计测试文件主要运行函数，通过flag判断是否需要显示运行结果
- * @date   2016-03-11
- * @author Sugarguo
- * @param  : 参数说明如下表：
- * name      | type      |description of param 
- * ----------|-----------|--------------------
- * hflag     | int       |是否采用高速快速排序方法
- * sflag     | int       |是否显示排序结果
- * oflag     | int       |屏幕显示词频结果或输入文件
- * @return    返回值说明如下：
- * name      | type      | description of value
- * ----------|-----------|----------------------
- * null      | int       | 0
- * @warning   null
- * @attention null
- * @note      null
- * @todo      null
- */
+* @brief GetStatistics \n
+* 运行的主函数
+* @param[in]	hflag	判断的第一个flag
+* @param[in]	sflag	判断的第二个flag
+* @param[in]	oflag	判断的第三个flag
+* @return		返回值0
+*/
 int GetStatistics( int hflag, int sflag, int oflag)
 {
-	DLNode *List = NULL;
-
-	List = CreateList();
-
-	if (List == NULL)
-	{
-		printf("Error!\n");
-		exit(1);
-	}
-	else
-		printf("OK!Create OK!\n");
+	//N *List = NULL;
+	//N *head = NULL;
+	N List;
 
 	int start_time = 0, end_time = 0;
 
@@ -330,9 +235,9 @@ int GetStatistics( int hflag, int sflag, int oflag)
 
 	start_time = clock();
 	if(hflag == 0)
-		SequenceList(List, 1, CallBackCmpStr_K);
+		string_sort_xier(List);
 	else
-		SequenceList(List, 2, CallBackCmpStr);
+		string_sort_xier(List);
 	end_time = clock();
 	printf("Sequence time :  %f \n", (float)(end_time - start_time) / CLOCKS_PER_SEC  );
 
@@ -346,31 +251,19 @@ int GetStatistics( int hflag, int sflag, int oflag)
 	end_time = clock();
 	printf("Statistics time : %f \n\n", (float)(end_time - start_time) / CLOCKS_PER_SEC  );
 
-	DropList(List);
-	free(List);
+	linkedlist_destory(&List);
 	
 	return 0;
 
 }
 
 /**
- * @brief display_usage \n
- * 词频统计测试文件通过getopt函数的错误回显
- * @date   2016-03-11
- * @author Sugarguo
- * @param  : 参数说明如下表：
- * name      | type      |description of param 
- * ----------|-----------|--------------------
- * null      | null      |null
- * @return    返回值说明如下：
- * name      | type      | description of value
- * ----------|-----------|----------------------
- * null      | null      | null
- * @warning   null
- * @attention null
- * @note      null
- * @todo      null
- */
+* @brief display_usage \n
+* 显示错误信息
+* @param[in]	*one	比较的第一个内容
+* @param[in]	*two	比较的第二个内容
+* @return		返回值为两个数的减法结果，根据等于大小零判断
+*/
 void display_usage( void )
 {
 	puts("Such as -f \"filename\" -o \"outfilename\" -h (high Sequence) -l (Show Line) -s (Shwo SequenceList) -p (Show EndContent)\n\n");
@@ -378,23 +271,11 @@ void display_usage( void )
 }
 
 /**
- * @brief convert_document \n
- * 词频统计测试文件通过getopt函数的配置函数
- * @date   2016-03-11
- * @author Sugarguo
- * @param  : 参数说明如下表：
- * name      | type      |description of param 
- * ----------|-----------|--------------------
- * null      | null      |null
- * @return    返回值说明如下：
- * name      | type      | description of value
- * ----------|-----------|----------------------
- * null      | null      | null
- * @warning   null
- * @attention null
- * @note      null
- * @todo      null
- */
+* @brief convert_document \n
+* 相应命令程序
+* @param[in]	choose			选择flag
+* @param[in]	getfilename		输入的文件名
+*/
 void convert_document( void )
 {
 	int choose = 0;
@@ -446,24 +327,11 @@ void convert_document( void )
 }
 
 /**
- * @brief main \n
- * 通过getopt，实现程序通过参数进行运行目的
- * @date   2016-03-11
- * @author Sugarguo
- * @param  : 参数说明如下表：
- * name      | type      |description of param 
- * ----------|-----------|--------------------
- * argc      | int       |参数个数
- * **argv    | char      |参数保存
- * @return    返回值说明如下：
- * name      | type      | description of value
- * ----------|-----------|----------------------
- * null      | int       | EXIT_SUCCESS
- * @warning   null
- * @attention null
- * @note      null
- * @todo      null
- */
+* @brief main \n
+* 主函数
+* @param[in]	opt		系统的getopt的初始化
+* @return		返回值为运行结果
+*/
 int main(int argc, char **argv)
 {
 	int opt = 0;

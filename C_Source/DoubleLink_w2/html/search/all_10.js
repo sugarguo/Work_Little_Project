@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['vs_5fstrltrim',['VS_StrLTrim',['../_get_opt_test_8c.html#a8e8214da72e3d59826ecc3d59a7485f4',1,'GetOptTest.c']]],
-  ['vs_5fstrrtrim',['VS_StrRTrim',['../_get_opt_test_8c.html#a550c7ba0830bea9bb19ab64ee947d5e3',1,'GetOptTest.c']]]
+  ['updatelist',['UpdateList',['../_double_link_8c.html#af42f761136d59421fe531e5f53db7d22',1,'UpdateList(DLNode *List, void *data_search, void *data_change, int(*CallBackCmp)(const void *, const void *)):&#160;DoubleLink.c'],['../_double_link_8h.html#af42f761136d59421fe531e5f53db7d22',1,'UpdateList(DLNode *List, void *data_search, void *data_change, int(*CallBackCmp)(const void *, const void *)):&#160;DoubleLink.c']]]
 ];

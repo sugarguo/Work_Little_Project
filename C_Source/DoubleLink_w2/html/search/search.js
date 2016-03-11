@@ -7,12 +7,13 @@
 
 var indexSectionsWithContent =
 {
-  0: "_abcdfghilmnopsuvw",
+  0: "_abcdfghilmnoprsuvwå",
   1: "_g",
-  2: "dg",
+  2: "dgr",
   3: "cdgimsuv",
   4: "abdfghlnopsw",
-  5: "d"
+  5: "d",
+  6: "wå"
 };
 
 var indexSectionNames =
@@ -22,7 +23,8 @@ var indexSectionNames =
   2: "files",
   3: "functions",
   4: "variables",
-  5: "typedefs"
+  5: "typedefs",
+  6: "pages"
 };
 
 function convertToId(search)

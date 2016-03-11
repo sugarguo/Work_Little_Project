@@ -46,6 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="pages.html"><span>相关页面</span></a></li>
       <li class="current"><a href="annotated.html"><span>结构体</span></a></li>
       <li><a href="files.html"><span>文件</span></a></li>
       <li>
@@ -93,7 +94,7 @@ $(document).ready(function(){initNavTree('struct___double_link.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>结构体</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>类型定义</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>结构体</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>类型定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>页</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -129,8 +130,16 @@ $(document).ready(function(){initNavTree('struct___double_link.html','');});
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
 <div class="textblock"><p>定义双向链表的结构体 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">*data</td><td>双向链表中的数据 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*back</td><td>返回指针 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*next</td><td>前进指针 </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00016">16</a> 行定义.</p>
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00022">22</a> 行定义.</p>
 </div><h2 class="groupheader">结构体成员变量说明</h2>
 <a class="anchor" id="af341c0d6517f5032958cd89884e6230e"></a>
 <div class="memitem">
@@ -144,7 +153,7 @@ $(document).ready(function(){initNavTree('struct___double_link.html','');});
 
 <p>双向链表的前区 </p>
 
-<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00019">19</a> 行定义.</p>
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00025">25</a> 行定义.</p>
 
 </div>
 </div>
@@ -160,7 +169,7 @@ $(document).ready(function(){initNavTree('struct___double_link.html','');});
 
 <p>双向链表中的数据 </p>
 
-<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00018">18</a> 行定义.</p>
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00024">24</a> 行定义.</p>
 
 </div>
 </div>
@@ -176,7 +185,7 @@ $(document).ready(function(){initNavTree('struct___double_link.html','');});
 
 <p>双向链表的后区 </p>
 
-<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00020">20</a> 行定义.</p>
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00026">26</a> 行定义.</p>
 
 </div>
 </div>

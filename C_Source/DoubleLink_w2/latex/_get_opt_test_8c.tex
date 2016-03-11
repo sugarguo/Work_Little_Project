@@ -26,25 +26,25 @@ void \hyperlink{_get_opt_test_8c_a8e8214da72e3d59826ecc3d59a7485f4}{V\-S\-\_\-\-
 去除字符串左边空格 \end{DoxyCompactList}\item 
 \hyperlink{_double_link_8c_a9fcabae42ec5545a4c8f778a68a4e578}{D\-L\-Node} $\ast$ \hyperlink{_get_opt_test_8c_a8622568f1e4ea1d7db998a346f8e68e7}{Statistics\-Show} (\hyperlink{_double_link_8c_a9fcabae42ec5545a4c8f778a68a4e578}{D\-L\-Node} $\ast$List)
 \begin{DoxyCompactList}\small\item\em Statistics\-Show \par
-仅显示，不写入文件 \end{DoxyCompactList}\item 
+统计词频，仅显示获取词频结果，不写入文件 \end{DoxyCompactList}\item 
 \hyperlink{_double_link_8c_a9fcabae42ec5545a4c8f778a68a4e578}{D\-L\-Node} $\ast$ \hyperlink{_get_opt_test_8c_a0dc3570bdc3b5e6b422cf4081976afff}{Statistics\-Content} (\hyperlink{_double_link_8c_a9fcabae42ec5545a4c8f778a68a4e578}{D\-L\-Node} $\ast$List)
 \begin{DoxyCompactList}\small\item\em Statistics\-Content \par
-统计词频,并写入文件 \end{DoxyCompactList}\item 
+统计词频，不显示获取词频结果，写入文件 \end{DoxyCompactList}\item 
 \hyperlink{_double_link_8c_a9fcabae42ec5545a4c8f778a68a4e578}{D\-L\-Node} $\ast$ \hyperlink{_get_opt_test_8c_ae823682b8b86c3bd035fdb849e4f3d1f}{Get\-File\-Content} (\hyperlink{_double_link_8c_a9fcabae42ec5545a4c8f778a68a4e578}{D\-L\-Node} $\ast$List)
 \begin{DoxyCompactList}\small\item\em Get\-File\-Content \par
-回调函数，比较内容是否相同 \end{DoxyCompactList}\item 
+获取文件内容，按字符读入，以a-\/z\&\&A-\/\-Z为判断条件选取单词 \end{DoxyCompactList}\item 
 int \hyperlink{_get_opt_test_8c_ab891633b1638654bdb2820c40f2cb6af}{Get\-Statistics} (int hflag, int sflag, int oflag)
 \begin{DoxyCompactList}\small\item\em Get\-Statistics \par
-运行的主函数 \end{DoxyCompactList}\item 
+词频统计测试文件主要运行函数，通过flag判断是否需要显示运行结果 \end{DoxyCompactList}\item 
 void \hyperlink{_get_opt_test_8c_acf5088e61b616f77674f62a9ba3b86b7}{display\-\_\-usage} (void)
 \begin{DoxyCompactList}\small\item\em display\-\_\-usage \par
-显示错误信息 \end{DoxyCompactList}\item 
+词频统计测试文件通过getopt函数的错误回显 \end{DoxyCompactList}\item 
 void \hyperlink{_get_opt_test_8c_a97dc5d244dcdb842fab654a276322639}{convert\-\_\-document} (void)
 \begin{DoxyCompactList}\small\item\em convert\-\_\-document \par
-相应命令程序 \end{DoxyCompactList}\item 
+词频统计测试文件通过getopt函数的配置函数 \end{DoxyCompactList}\item 
 int \hyperlink{_get_opt_test_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
 \begin{DoxyCompactList}\small\item\em main \par
-主函数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+通过getopt，实现程序通过参数进行运行目的 \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{变量}
 \begin{DoxyCompactItemize}
 \item 
@@ -63,18 +63,46 @@ struct \hyperlink{structglobal_args__t}{global\-Args\-\_\-t} \hyperlink{_get_opt
 
 
 convert\-\_\-document \par
-相应命令程序 
+词频统计测试文件通过getopt函数的配置函数 
 
+\begin{DoxyDate}{日期}
+2016-\/03-\/11 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
 
-\begin{DoxyParams}[1]{参数}
-\mbox{\tt in}  & {\em choose} & 选择flag \\
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
 \hline
-\mbox{\tt in}  & {\em getfilename} & 输入的文件名 \\
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+null 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000025}{待办事项}]null \end{DoxyRefDesc}
 
 
-在文件 Get\-Opt\-Test.\-c 第 288 行定义.
+在文件 Get\-Opt\-Test.\-c 第 398 行定义.
 
 \hypertarget{_get_opt_test_8c_acf5088e61b616f77674f62a9ba3b86b7}{\index{Get\-Opt\-Test.\-c@{Get\-Opt\-Test.\-c}!display\-\_\-usage@{display\-\_\-usage}}
 \index{display\-\_\-usage@{display\-\_\-usage}!GetOptTest.c@{Get\-Opt\-Test.\-c}}
@@ -86,21 +114,46 @@ convert\-\_\-document \par
 
 
 display\-\_\-usage \par
-显示错误信息 
+词频统计测试文件通过getopt函数的错误回显 
 
+\begin{DoxyDate}{日期}
+2016-\/03-\/11 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
 
-\begin{DoxyParams}[1]{参数}
-\mbox{\tt in}  & {\em $\ast$one} & 比较的第一个内容 \\
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
 \hline
-\mbox{\tt in}  & {\em $\ast$two} & 比较的第二个内容 \\
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{返回}
-返回值为两个数的减法结果，根据等于大小零判断 
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+
 \end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+null 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000024}{待办事项}]null \end{DoxyRefDesc}
 
 
-在文件 Get\-Opt\-Test.\-c 第 276 行定义.
+在文件 Get\-Opt\-Test.\-c 第 374 行定义.
 
 \hypertarget{_get_opt_test_8c_ae823682b8b86c3bd035fdb849e4f3d1f}{\index{Get\-Opt\-Test.\-c@{Get\-Opt\-Test.\-c}!Get\-File\-Content@{Get\-File\-Content}}
 \index{Get\-File\-Content@{Get\-File\-Content}!GetOptTest.c@{Get\-Opt\-Test.\-c}}
@@ -112,21 +165,46 @@ display\-\_\-usage \par
 
 
 Get\-File\-Content \par
-回调函数，比较内容是否相同 
+获取文件内容，按字符读入，以a-\/z\&\&A-\/\-Z为判断条件选取单词 
 
+\begin{DoxyDate}{日期}
+2016-\/03-\/11 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
 
-\begin{DoxyParams}[1]{参数}
-\mbox{\tt in}  & {\em $\ast$one} & 比较的第一个内容 \\
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
 \hline
-\mbox{\tt in}  & {\em $\ast$two} & 比较的第二个内容 \\
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+$\ast$\-List &D\-L\-Node &输入的双向链表指针 \\\cline{1-3}
+\end{TabularC}
+\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{返回}
-返回值为两个数的减法结果，根据等于大小零判断 
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+
 \end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+按字节读入，准确率\-M\-A\-X，效率\-L\-O\-W 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+该接口需要传入双向链表指针 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+传入双向链表指针，读取文件并写到双向链表中 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000022}{待办事项}]按字节读入，准确率\-M\-A\-X，效率\-L\-O\-W \end{DoxyRefDesc}
 
 
-在文件 Get\-Opt\-Test.\-c 第 172 行定义.
+在文件 Get\-Opt\-Test.\-c 第 247 行定义.
 
 \hypertarget{_get_opt_test_8c_ab891633b1638654bdb2820c40f2cb6af}{\index{Get\-Opt\-Test.\-c@{Get\-Opt\-Test.\-c}!Get\-Statistics@{Get\-Statistics}}
 \index{Get\-Statistics@{Get\-Statistics}!GetOptTest.c@{Get\-Opt\-Test.\-c}}
@@ -140,23 +218,48 @@ Get\-File\-Content \par
 
 
 Get\-Statistics \par
-运行的主函数 
+词频统计测试文件主要运行函数，通过flag判断是否需要显示运行结果 
 
+\begin{DoxyDate}{日期}
+2016-\/03-\/11 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
 
-\begin{DoxyParams}[1]{参数}
-\mbox{\tt in}  & {\em hflag} & 判断的第一个flag \\
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
 \hline
-\mbox{\tt in}  & {\em sflag} & 判断的第二个flag \\
-\hline
-\mbox{\tt in}  & {\em oflag} & 判断的第三个flag \\
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+hflag &int &是否采用高速快速排序方法 \\\cline{1-3}
+sflag &int &是否显示排序结果 \\\cline{1-3}
+oflag &int &屏幕显示词频结果或输入文件 \\\cline{1-3}
+\end{TabularC}
+\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{返回}
-返回值0 
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &int &0 \\\cline{1-3}
+\end{TabularC}
+
 \end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+null 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000023}{待办事项}]null \end{DoxyRefDesc}
 
 
-在文件 Get\-Opt\-Test.\-c 第 223 行定义.
+在文件 Get\-Opt\-Test.\-c 第 310 行定义.
 
 \hypertarget{_get_opt_test_8c_a3c04138a5bfe5d72780bb7e82a18e627}{\index{Get\-Opt\-Test.\-c@{Get\-Opt\-Test.\-c}!main@{main}}
 \index{main@{main}!GetOptTest.c@{Get\-Opt\-Test.\-c}}
@@ -169,19 +272,47 @@ Get\-Statistics \par
 
 
 main \par
-主函数 
+通过getopt，实现程序通过参数进行运行目的 
 
+\begin{DoxyDate}{日期}
+2016-\/03-\/11 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
 
-\begin{DoxyParams}[1]{参数}
-\mbox{\tt in}  & {\em opt} & 系统的getopt的初始化 \\
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+argc &int &参数个数 \\\cline{1-3}
+$\ast$$\ast$argv &char &参数保存 \\\cline{1-3}
+\end{TabularC}
+\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{返回}
-返回值为运行结果 
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &int &E\-X\-I\-T\-\_\-\-S\-U\-C\-C\-E\-S\-S \\\cline{1-3}
+\end{TabularC}
+
 \end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+null 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000026}{待办事项}]null \end{DoxyRefDesc}
 
 
-在文件 Get\-Opt\-Test.\-c 第 344 行定义.
+在文件 Get\-Opt\-Test.\-c 第 467 行定义.
 
 \hypertarget{_get_opt_test_8c_a30c26ca0e13ccfaaeb18bbb24eea0217}{\index{Get\-Opt\-Test.\-c@{Get\-Opt\-Test.\-c}!Show\-Line@{Show\-Line}}
 \index{Show\-Line@{Show\-Line}!GetOptTest.c@{Get\-Opt\-Test.\-c}}
@@ -195,17 +326,44 @@ main \par
 Show\-Line \par
 显示文件或者返回行数 
 
+\begin{DoxyDate}{日期}
+2016-\/03-\/11 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
 
-\begin{DoxyParams}[1]{参数}
-\mbox{\tt in}  & {\em $\ast$filename} & 比较的第一个内容 \\
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+$\ast$filename &char &输入的文件名 \\\cline{1-3}
+\end{TabularC}
+\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{返回}
-返回值 
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &int &0 \\\cline{1-3}
+\end{TabularC}
+
 \end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+该接口单独遍历文件，耗费系统资源 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+该接口单独遍历文件，耗费系统资源 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+文件遍历读取行号，可修改为显示文件内容 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000017}{待办事项}]未整合到主程序，耗费系统资源 \end{DoxyRefDesc}
 
 
-在文件 Get\-Opt\-Test.\-c 第 43 行定义.
+在文件 Get\-Opt\-Test.\-c 第 55 行定义.
 
 \hypertarget{_get_opt_test_8c_a0dc3570bdc3b5e6b422cf4081976afff}{\index{Get\-Opt\-Test.\-c@{Get\-Opt\-Test.\-c}!Statistics\-Content@{Statistics\-Content}}
 \index{Statistics\-Content@{Statistics\-Content}!GetOptTest.c@{Get\-Opt\-Test.\-c}}
@@ -217,16 +375,46 @@ Show\-Line \par
 
 
 Statistics\-Content \par
-统计词频,并写入文件 
+统计词频，不显示获取词频结果，写入文件 
 
+\begin{DoxyDate}{日期}
+2016-\/03-\/11 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
 
-\begin{DoxyParams}[1]{参数}
-\mbox{\tt in}  & {\em $\ast$\-List} & 双向链表默认链表接口 \\
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+$\ast$\-List &D\-L\-Node &输入的双向链表指针 \\\cline{1-3}
+\end{TabularC}
+\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+该接口需要传入双向链表指针 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+传入双向链表指针，不显示获取词频结果，写入文件 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000021}{待办事项}]有显示和写文件俩个函数，待整合 \end{DoxyRefDesc}
 
 
-在文件 Get\-Opt\-Test.\-c 第 132 行定义.
+在文件 Get\-Opt\-Test.\-c 第 196 行定义.
 
 \hypertarget{_get_opt_test_8c_a8622568f1e4ea1d7db998a346f8e68e7}{\index{Get\-Opt\-Test.\-c@{Get\-Opt\-Test.\-c}!Statistics\-Show@{Statistics\-Show}}
 \index{Statistics\-Show@{Statistics\-Show}!GetOptTest.c@{Get\-Opt\-Test.\-c}}
@@ -238,16 +426,46 @@ Statistics\-Content \par
 
 
 Statistics\-Show \par
-仅显示，不写入文件 
+统计词频，仅显示获取词频结果，不写入文件 
 
+\begin{DoxyDate}{日期}
+2016-\/03-\/11 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
 
-\begin{DoxyParams}[1]{参数}
-\mbox{\tt in}  & {\em $\ast$\-List} & 双向链表默认链表接口 \\
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+$\ast$\-List &D\-L\-Node &输入的双向链表指针 \\\cline{1-3}
+\end{TabularC}
+\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+该接口需要传入双向链表指针 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+传入双向链表指针，仅显示获取词频结果，不写入文件 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000020}{待办事项}]有显示和写文件俩个函数，待整合 \end{DoxyRefDesc}
 
 
-在文件 Get\-Opt\-Test.\-c 第 105 行定义.
+在文件 Get\-Opt\-Test.\-c 第 156 行定义.
 
 \hypertarget{_get_opt_test_8c_a8e8214da72e3d59826ecc3d59a7485f4}{\index{Get\-Opt\-Test.\-c@{Get\-Opt\-Test.\-c}!V\-S\-\_\-\-Str\-L\-Trim@{V\-S\-\_\-\-Str\-L\-Trim}}
 \index{V\-S\-\_\-\-Str\-L\-Trim@{V\-S\-\_\-\-Str\-L\-Trim}!GetOptTest.c@{Get\-Opt\-Test.\-c}}
@@ -261,14 +479,44 @@ Statistics\-Show \par
 V\-S\-\_\-\-Str\-L\-Trim \par
 去除字符串左边空格 
 
+\begin{DoxyDate}{日期}
+2016-\/03-\/11 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
 
-\begin{DoxyParams}[1]{参数}
-\mbox{\tt in}  & {\em $\ast$p\-Str} & 需要处理的字符串 \\
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+$\ast$p\-Str &char &输入的字符串 \\\cline{1-3}
+\end{TabularC}
+\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+该接口需要传入字符串指针 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+传入字符串指针，去除字符串左边空格 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000019}{待办事项}]null \end{DoxyRefDesc}
 
 
-在文件 Get\-Opt\-Test.\-c 第 82 行定义.
+在文件 Get\-Opt\-Test.\-c 第 120 行定义.
 
 \hypertarget{_get_opt_test_8c_a550c7ba0830bea9bb19ab64ee947d5e3}{\index{Get\-Opt\-Test.\-c@{Get\-Opt\-Test.\-c}!V\-S\-\_\-\-Str\-R\-Trim@{V\-S\-\_\-\-Str\-R\-Trim}}
 \index{V\-S\-\_\-\-Str\-R\-Trim@{V\-S\-\_\-\-Str\-R\-Trim}!GetOptTest.c@{Get\-Opt\-Test.\-c}}
@@ -282,14 +530,44 @@ V\-S\-\_\-\-Str\-L\-Trim \par
 V\-S\-\_\-\-Str\-R\-Trim \par
 去除字符串右边空格 
 
+\begin{DoxyDate}{日期}
+2016-\/03-\/11 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
 
-\begin{DoxyParams}[1]{参数}
-\mbox{\tt in}  & {\em $\ast$p\-Str} & 需要处理的字符串 \\
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+$\ast$p\-Str &char &输入的字符串 \\\cline{1-3}
+\end{TabularC}
+\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+该接口需要传入字符串指针 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+传入字符串指针，去除字符串右边空格 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000018}{待办事项}]null \end{DoxyRefDesc}
 
 
-在文件 Get\-Opt\-Test.\-c 第 66 行定义.
+在文件 Get\-Opt\-Test.\-c 第 91 行定义.
 
 
 

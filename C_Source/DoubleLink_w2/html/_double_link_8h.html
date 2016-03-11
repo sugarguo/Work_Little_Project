@@ -46,6 +46,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'搜索');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="pages.html"><span>相关页面</span></a></li>
       <li><a href="annotated.html"><span>结构体</span></a></li>
       <li class="current"><a href="files.html"><span>文件</span></a></li>
       <li>
@@ -92,7 +93,7 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>结构体</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>类型定义</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>结构体</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>类型定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>页</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -132,6 +133,8 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 函数</h2></td></tr>
 <tr class="memitem:aec0d0b1312b68b305a5ec9cd4ae3c6c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_double_link_8h.html#aec0d0b1312b68b305a5ec9cd4ae3c6c3">CreateList</a> ()</td></tr>
+<tr class="memdesc:aec0d0b1312b68b305a5ec9cd4ae3c6c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">CreateList <br/>
+创建双向链表  <a href="#aec0d0b1312b68b305a5ec9cd4ae3c6c3">更多...</a><br/></td></tr>
 <tr class="separator:aec0d0b1312b68b305a5ec9cd4ae3c6c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e2ed3c9809675c7d6be50c86880b324"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_double_link_8h.html#a1e2ed3c9809675c7d6be50c86880b324">CallBackCmpInt</a> (const void *one, const void *two)</td></tr>
 <tr class="memdesc:a1e2ed3c9809675c7d6be50c86880b324"><td class="mdescLeft">&#160;</td><td class="mdescRight">CallBackCmpInt <br/>
@@ -175,7 +178,7 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
 <tr class="separator:aa397cd5b88823e339f63a646497bd260"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a127d2524a910989b06852dea39a6c86f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_double_link_8h.html#a127d2524a910989b06852dea39a6c86f">ShowList</a> (<a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a> *List, int flag, int judge)</td></tr>
 <tr class="memdesc:a127d2524a910989b06852dea39a6c86f"><td class="mdescLeft">&#160;</td><td class="mdescRight">ShowList <br/>
-遍历双向链表  <a href="#a127d2524a910989b06852dea39a6c86f">更多...</a><br/></td></tr>
+遍历双向链表，根据flag选择显示格式，根据judge选择是否输出遍历结果  <a href="#a127d2524a910989b06852dea39a6c86f">更多...</a><br/></td></tr>
 <tr class="separator:a127d2524a910989b06852dea39a6c86f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15364937ad58d693d28671f21106d2ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_double_link_8h.html#a15364937ad58d693d28671f21106d2ec">DropList</a> (<a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a> *List)</td></tr>
 <tr class="memdesc:a15364937ad58d693d28671f21106d2ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">DropList <br/>
@@ -203,6 +206,14 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
 </div><div class="memdoc">
 
 <p>定义双向链表的结构体 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">*data</td><td>双向链表中的数据 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*back</td><td>返回指针 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*next</td><td>前进指针 </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -242,7 +253,7 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
 </dl>
 <dl class="section return"><dt>返回</dt><dd>返回值为两个字母比较结果 </dd></dl>
 
-<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00064">64</a> 行定义.</p>
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00087">87</a> 行定义.</p>
 
 </div>
 </div>
@@ -281,7 +292,7 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
 </dl>
 <dl class="section return"><dt>返回</dt><dd>返回值为两个数的减法结果，根据等于大小零判断 </dd></dl>
 
-<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00052">52</a> 行定义.</p>
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00074">74</a> 行定义.</p>
 
 </div>
 </div>
@@ -320,7 +331,7 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
 </dl>
 <dl class="section return"><dt>返回</dt><dd>返回值为两个单词比较结果 </dd></dl>
 
-<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00076">76</a> 行定义.</p>
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00100">100</a> 行定义.</p>
 
 </div>
 </div>
@@ -359,7 +370,7 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
 </dl>
 <dl class="section return"><dt>返回</dt><dd>返回值为两个单词比较结果 </dd></dl>
 
-<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00088">88</a> 行定义.</p>
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00113">113</a> 行定义.</p>
 
 </div>
 </div>
@@ -397,7 +408,7 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
   </dd>
 </dl>
 
-<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00099">99</a> 行定义.</p>
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00125">125</a> 行定义.</p>
 
 </div>
 </div>
@@ -413,10 +424,61 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
         </tr>
       </table>
 </div><div class="memdoc">
-<p>CreateList 创建双向链表 </p>
-<dl class="section return"><dt>返回</dt><dd>返回值为List 为DLNode的空链表，首尾相连 </dd></dl>
 
-<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00027">27</a> 行定义.</p>
+<p>CreateList <br/>
+创建双向链表 </p>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>创建双向链表,返回指针 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000009">待办事项:</a></b></dt><dd>null </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>创建双向链表,返回指针 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">待办事项:</a></b></dt><dd>null </dd></dl>
+
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00048">48</a> 行定义.</p>
 
 </div>
 </div>
@@ -452,16 +514,66 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
 
 <p>DeleteList <br/>
 删除双向链表，查询节点位置，将前后地址相连接，然后free此节点位置 </p>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*List</td><td>双向链表默认链表接口 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">*data</td><td>需要被删除的无类型数据指针 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">*CallBackCmp</td><td>各种类型的回调函数接口 </td></tr>
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+<tr>
+<td>*data </td><td>void </td><td>显示格式flag </td></tr>
+<tr>
+<td>*CallBackCmp</td><td>int </td><td>判断回调函数 </td></tr>
+</table>
+</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>删除节点操作，一经操作无法返回，慎用！ </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>删除双向链表，查询节点位置，将前后地址相连接，然后free此节点位置 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000014">待办事项:</a></b></dt><dd>null </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+<tr>
+<td>*data </td><td>void </td><td>显示格式flag </td></tr>
+<tr>
+<td>*CallBackCmp</td><td>int </td><td>判断回调函数 </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>删除节点操作，一经操作无法返回，慎用！ </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>删除双向链表，查询节点位置，将前后地址相连接，然后free此节点位置 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">待办事项:</a></b></dt><dd>null </dd></dl>
 
-<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00337">337</a> 行定义.</p>
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00435">435</a> 行定义.</p>
 
 </div>
 </div>
@@ -481,14 +593,58 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
 
 <p>DropList <br/>
 删除双向链表，全部删除，释放内存空间 </p>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*List</td><td>双向链表默认链表接口 </td></tr>
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+</table>
+</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>此操作会清空双向链表的数据，系统暂存空间 </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>此操作会清空双向链表的数据，系统暂存空间,谨慎操作 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000016">待办事项:</a></b></dt><dd>null </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>此操作会清空双向链表的数据，系统暂存空间 </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>此操作会清空双向链表的数据，系统暂存空间,谨慎操作 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000008">待办事项:</a></b></dt><dd>null </dd></dl>
 
-<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00397">397</a> 行定义.</p>
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00522">522</a> 行定义.</p>
 
 </div>
 </div>
@@ -518,15 +674,62 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
 
 <p>InsertList <br/>
 插入双向链表，根据双向链表的接口插入数据 </p>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*List</td><td>双向链表默认链表接口 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">*data</td><td>需要插入的无类型数据指针 </td></tr>
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+<tr>
+<td>*data </td><td>void </td><td>需要插入的数据指针 </td></tr>
+</table>
+</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>插入双向链表，根据双向链表的接口插入数据 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000012">待办事项:</a></b></dt><dd>null </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+<tr>
+<td>*data </td><td>void </td><td>需要插入的数据指针 </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>插入双向链表，根据双向链表的接口插入数据 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">待办事项:</a></b></dt><dd>null </dd></dl>
 
-<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00286">286</a> 行定义.</p>
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00356">356</a> 行定义.</p>
 
 </div>
 </div>
@@ -562,16 +765,66 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
 
 <p>SearchList <br/>
 查询双向链表，通过给定的默认双向链表，判断数据以及数据地址是否存在 </p>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*List</td><td>双向链表默认链表接口 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">*data</td><td>需要查询的无类型数据指针 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">*CallBackCmp</td><td>各种类型的回调函数接口 </td></tr>
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+<tr>
+<td>*data </td><td>void </td><td>需要查询的数据指针 </td></tr>
+<tr>
+<td>*CallBackCmp</td><td>int </td><td>判断回调函数 </td></tr>
+</table>
+</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>查询双向链表，通过给定的默认双向链表，判断数据以及数据地址是否存在 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000010">待办事项:</a></b></dt><dd>null </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+<tr>
+<td>*data </td><td>void </td><td>需要查询的数据指针 </td></tr>
+<tr>
+<td>*CallBackCmp</td><td>int </td><td>判断回调函数 </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>查询双向链表，通过给定的默认双向链表，判断数据以及数据地址是否存在 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">待办事项:</a></b></dt><dd>null </dd></dl>
 
-<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00189">189</a> 行定义.</p>
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00231">231</a> 行定义.</p>
 
 </div>
 </div>
@@ -607,16 +860,66 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
 
 <p>SequenceList <br/>
 排列双向链表函数通过flag的flag，选择合适的排序方法 </p>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*List</td><td>双向链表默认链表接口 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">flag</td><td>提供接口，让用户定义具体比较函数 flag = 0: 采用冒泡排序 1: 系统快排 2: 自写快排（默认采用） </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">*CallBackCmp</td><td>各种类型的回调函数接口 </td></tr>
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+<tr>
+<td>flag </td><td>int </td><td>采用排序方法的flag </td></tr>
+<tr>
+<td>*CallBackCmp</td><td>int </td><td>判断回调函数 </td></tr>
+</table>
+</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>0： 为冒泡排序，耗费较多资源；1： 系统快排，最快 2： 自写快排 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>排列双向链表函数通过flag的flag，选择合适的排序方法 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000011">待办事项:</a></b></dt><dd>null </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+<tr>
+<td>flag </td><td>int </td><td>采用排序方法的flag </td></tr>
+<tr>
+<td>*CallBackCmp</td><td>int </td><td>判断回调函数 </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>0： 为冒泡排序，耗费较多资源；1： 系统快排，最快 2： 自写快排 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>排列双向链表函数通过flag的flag，选择合适的排序方法 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">待办事项:</a></b></dt><dd>null </dd></dl>
 
-<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00210">210</a> 行定义.</p>
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00266">266</a> 行定义.</p>
 
 </div>
 </div>
@@ -651,18 +954,67 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
 </div><div class="memdoc">
 
 <p>ShowList <br/>
-遍历双向链表 </p>
+遍历双向链表，根据flag选择显示格式，根据judge选择是否输出遍历结果 </p>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*List</td><td>双向链表默认链表接口 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">flag</td><td>提供接口，flag = 0: int显示 1: char字符显示 2: char * 字符串显示 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">judge</td><td>提供接口，judge = 1: 不显示遍历结果 !=1: 显示遍历结果 </td></tr>
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+<tr>
+<td>flag </td><td>int </td><td>显示格式flag </td></tr>
+<tr>
+<td>judge </td><td>int </td><td>是否显示flag </td></tr>
+</table>
+</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>返回</dt><dd>返回值为遍历结果，有多少个 </dd></dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>nodenum </td><td>int </td><td>返回链表长度 </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>遍历双向链表，根据flag选择显示格式，根据judge选择是否输出遍历结果 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000015">待办事项:</a></b></dt><dd>null </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+<tr>
+<td>flag </td><td>int </td><td>显示格式flag </td></tr>
+<tr>
+<td>judge </td><td>int </td><td>是否显示flag </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>nodenum </td><td>int </td><td>返回链表长度 </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>遍历双向链表，根据flag选择显示格式，根据judge选择是否输出遍历结果 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">待办事项:</a></b></dt><dd>null </dd></dl>
 
-<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00374">374</a> 行定义.</p>
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00485">485</a> 行定义.</p>
 
 </div>
 </div>
@@ -704,17 +1056,70 @@ $(document).ready(function(){initNavTree('_double_link_8h.html','');});
 
 <p>UpdateList <br/>
 更新双向链表，通过查询原始的节点位置，修改数据 </p>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">*List</td><td>双向链表默认链表接口 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">*data_search</td><td>需要被更新的初始无类型数据指针 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">*data_change</td><td>需要更新的无类型数据指针 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">*CallBackCmp</td><td>各种类型的回调函数接口 </td></tr>
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+<tr>
+<td>*data_search</td><td>void </td><td>需要查询的数据指针 </td></tr>
+<tr>
+<td>*data_change</td><td>void </td><td>需要修改的数据指针 </td></tr>
+<tr>
+<td>*CallBackCmp</td><td>int </td><td>判断回调函数 </td></tr>
+</table>
+</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>更新节点操作，一经操作无法返回，慎用！ </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>更新双向链表，通过查询原始的节点位置，修改数据 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000013">待办事项:</a></b></dt><dd>null </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+<tr>
+<td>*data_search</td><td>void </td><td>需要查询的数据指针 </td></tr>
+<tr>
+<td>*data_change</td><td>void </td><td>需要修改的数据指针 </td></tr>
+<tr>
+<td>*CallBackCmp</td><td>int </td><td>判断回调函数 </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>更新节点操作，一经操作无法返回，慎用！ </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>更新双向链表，通过查询原始的节点位置，修改数据 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">待办事项:</a></b></dt><dd>null </dd></dl>
 
-<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00313">313</a> 行定义.</p>
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00397">397</a> 行定义.</p>
 
 </div>
 </div>

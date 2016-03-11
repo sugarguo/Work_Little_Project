@@ -21,7 +21,8 @@ typedef struct \hyperlink{struct___double_link}{\-\_\-\-Double\-Link} \hyperlink
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{_double_link_8c_a9fcabae42ec5545a4c8f778a68a4e578}{D\-L\-Node} $\ast$ \hyperlink{_double_link_8h_aec0d0b1312b68b305a5ec9cd4ae3c6c3}{Create\-List} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Create\-List \par
+创建双向链表 \end{DoxyCompactList}\item 
 int \hyperlink{_double_link_8h_a1e2ed3c9809675c7d6be50c86880b324}{Call\-Back\-Cmp\-Int} (const void $\ast$one, const void $\ast$two)
 \begin{DoxyCompactList}\small\item\em Call\-Back\-Cmp\-Int \par
 回调函数，比较内容是否相同 \end{DoxyCompactList}\item 
@@ -54,7 +55,7 @@ void \hyperlink{_double_link_8h_aa397cd5b88823e339f63a646497bd260}{Delete\-List}
 删除双向链表，查询节点位置，将前后地址相连接，然后free此节点位置 \end{DoxyCompactList}\item 
 int \hyperlink{_double_link_8h_a127d2524a910989b06852dea39a6c86f}{Show\-List} (\hyperlink{_double_link_8c_a9fcabae42ec5545a4c8f778a68a4e578}{D\-L\-Node} $\ast$List, int flag, int judge)
 \begin{DoxyCompactList}\small\item\em Show\-List \par
-遍历双向链表 \end{DoxyCompactList}\item 
+遍历双向链表，根据flag选择显示格式，根据judge选择是否输出遍历结果 \end{DoxyCompactList}\item 
 void \hyperlink{_double_link_8h_a15364937ad58d693d28671f21106d2ec}{Drop\-List} (\hyperlink{_double_link_8c_a9fcabae42ec5545a4c8f778a68a4e578}{D\-L\-Node} $\ast$List)
 \begin{DoxyCompactList}\small\item\em Drop\-List \par
 删除双向链表，全部删除，释放内存空间 \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -89,6 +90,15 @@ Embed\-Way 恒为科技武汉研发中心 By\-:Sugarguo
 定义双向链表的结构体 
 
 
+\begin{DoxyParams}[1]{参数}
+\mbox{\tt in}  & {\em $\ast$data} & 双向链表中的数据 \\
+\hline
+\mbox{\tt in}  & {\em $\ast$back} & 返回指针 \\
+\hline
+\mbox{\tt in}  & {\em $\ast$next} & 前进指针 \\
+\hline
+\end{DoxyParams}
+
 
 \subsection{函数说明}
 \hypertarget{_double_link_8h_ad5ccd002bc1fef51bc54952026d308a2}{\index{Double\-Link.\-h@{Double\-Link.\-h}!Call\-Back\-Cmp\-Char@{Call\-Back\-Cmp\-Char}}
@@ -116,7 +126,7 @@ Call\-Back\-Cmp\-Char \par
 \end{DoxyReturn}
 
 
-在文件 Double\-Link.\-c 第 64 行定义.
+在文件 Double\-Link.\-c 第 87 行定义.
 
 \hypertarget{_double_link_8h_a1e2ed3c9809675c7d6be50c86880b324}{\index{Double\-Link.\-h@{Double\-Link.\-h}!Call\-Back\-Cmp\-Int@{Call\-Back\-Cmp\-Int}}
 \index{Call\-Back\-Cmp\-Int@{Call\-Back\-Cmp\-Int}!DoubleLink.h@{Double\-Link.\-h}}
@@ -143,7 +153,7 @@ Call\-Back\-Cmp\-Int \par
 \end{DoxyReturn}
 
 
-在文件 Double\-Link.\-c 第 52 行定义.
+在文件 Double\-Link.\-c 第 74 行定义.
 
 \hypertarget{_double_link_8h_ac4872b9b04c64d8f80c68a1010142094}{\index{Double\-Link.\-h@{Double\-Link.\-h}!Call\-Back\-Cmp\-Str@{Call\-Back\-Cmp\-Str}}
 \index{Call\-Back\-Cmp\-Str@{Call\-Back\-Cmp\-Str}!DoubleLink.h@{Double\-Link.\-h}}
@@ -170,7 +180,7 @@ Call\-Back\-Cmp\-Str \par
 \end{DoxyReturn}
 
 
-在文件 Double\-Link.\-c 第 76 行定义.
+在文件 Double\-Link.\-c 第 100 行定义.
 
 \hypertarget{_double_link_8h_ae14dec8d152bc2fe872c9e7b80364c52}{\index{Double\-Link.\-h@{Double\-Link.\-h}!Call\-Back\-Cmp\-Str\-\_\-\-K@{Call\-Back\-Cmp\-Str\-\_\-\-K}}
 \index{Call\-Back\-Cmp\-Str\-\_\-\-K@{Call\-Back\-Cmp\-Str\-\_\-\-K}!DoubleLink.h@{Double\-Link.\-h}}
@@ -197,7 +207,7 @@ Call\-Back\-Cmp\-Str\-\_\-\-K \par
 \end{DoxyReturn}
 
 
-在文件 Double\-Link.\-c 第 88 行定义.
+在文件 Double\-Link.\-c 第 113 行定义.
 
 \hypertarget{_double_link_8h_aae7d8cc126e2938b9f152c300b83f7d3}{\index{Double\-Link.\-h@{Double\-Link.\-h}!Call\-Back\-Show@{Call\-Back\-Show}}
 \index{Call\-Back\-Show@{Call\-Back\-Show}!DoubleLink.h@{Double\-Link.\-h}}
@@ -221,7 +231,7 @@ Call\-Back\-Show \par
 \end{DoxyParams}
 
 
-在文件 Double\-Link.\-c 第 99 行定义.
+在文件 Double\-Link.\-c 第 125 行定义.
 
 \hypertarget{_double_link_8h_aec0d0b1312b68b305a5ec9cd4ae3c6c3}{\index{Double\-Link.\-h@{Double\-Link.\-h}!Create\-List@{Create\-List}}
 \index{Create\-List@{Create\-List}!DoubleLink.h@{Double\-Link.\-h}}
@@ -230,12 +240,86 @@ Call\-Back\-Show \par
 {}
 \end{DoxyParamCaption}
 )}}\label{_double_link_8h_aec0d0b1312b68b305a5ec9cd4ae3c6c3}
-Create\-List 创建双向链表 \begin{DoxyReturn}{返回}
-返回值为\-List 为\-D\-L\-Node的空链表，首尾相连 
+
+
+Create\-List \par
+创建双向链表 
+
+\begin{DoxyDate}{日期}
+2016-\/03-\/11 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+$\ast$\-List &D\-L\-Node &双向链表默认链表接口 \\\cline{1-3}
+\end{TabularC}
+
 \end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+创建双向链表,返回指针 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000009}{待办事项}]null \end{DoxyRefDesc}
 
 
-在文件 Double\-Link.\-c 第 27 行定义.
+\begin{DoxyDate}{日期}
+2016-\/03-\/11 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+$\ast$\-List &D\-L\-Node &双向链表默认链表接口 \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+创建双向链表,返回指针 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000001}{待办事项}]null \end{DoxyRefDesc}
+
+
+在文件 Double\-Link.\-c 第 48 行定义.
 
 \hypertarget{_double_link_8h_aa397cd5b88823e339f63a646497bd260}{\index{Double\-Link.\-h@{Double\-Link.\-h}!Delete\-List@{Delete\-List}}
 \index{Delete\-List@{Delete\-List}!DoubleLink.h@{Double\-Link.\-h}}
@@ -251,18 +335,85 @@ Create\-List 创建双向链表 \begin{DoxyReturn}{返回}
 Delete\-List \par
 删除双向链表，查询节点位置，将前后地址相连接，然后free此节点位置 
 
+\begin{DoxyDate}{日期}
+2016-\/03-\/11 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
 
-\begin{DoxyParams}[1]{参数}
-\mbox{\tt in}  & {\em $\ast$\-List} & 双向链表默认链表接口 \\
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
 \hline
-\mbox{\tt in}  & {\em $\ast$data} & 需要被删除的无类型数据指针 \\
-\hline
-\mbox{\tt in}  & {\em $\ast$\-Call\-Back\-Cmp} & 各种类型的回调函数接口 \\
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+$\ast$\-List &D\-L\-Node &双向链表默认链表接口 \\\cline{1-3}
+$\ast$data &void &显示格式flag \\\cline{1-3}
+$\ast$\-Call\-Back\-Cmp&int &判断回调函数 \\\cline{1-3}
+\end{TabularC}
+\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+删除节点操作，一经操作无法返回，慎用！ 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+删除双向链表，查询节点位置，将前后地址相连接，然后free此节点位置 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000014}{待办事项}]null \end{DoxyRefDesc}
 
 
-在文件 Double\-Link.\-c 第 337 行定义.
+\begin{DoxyDate}{日期}
+2016-\/03-\/11 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+$\ast$\-List &D\-L\-Node &双向链表默认链表接口 \\\cline{1-3}
+$\ast$data &void &显示格式flag \\\cline{1-3}
+$\ast$\-Call\-Back\-Cmp&int &判断回调函数 \\\cline{1-3}
+\end{TabularC}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+删除节点操作，一经操作无法返回，慎用！ 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+删除双向链表，查询节点位置，将前后地址相连接，然后free此节点位置 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000006}{待办事项}]null \end{DoxyRefDesc}
+
+
+在文件 Double\-Link.\-c 第 435 行定义.
 
 \hypertarget{_double_link_8h_a15364937ad58d693d28671f21106d2ec}{\index{Double\-Link.\-h@{Double\-Link.\-h}!Drop\-List@{Drop\-List}}
 \index{Drop\-List@{Drop\-List}!DoubleLink.h@{Double\-Link.\-h}}
@@ -276,14 +427,81 @@ Delete\-List \par
 Drop\-List \par
 删除双向链表，全部删除，释放内存空间 
 
+\begin{DoxyDate}{日期}
+2016-\/03-\/11 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
 
-\begin{DoxyParams}[1]{参数}
-\mbox{\tt in}  & {\em $\ast$\-List} & 双向链表默认链表接口 \\
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+$\ast$\-List &D\-L\-Node &双向链表默认链表接口 \\\cline{1-3}
+\end{TabularC}
+\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+此操作会清空双向链表的数据，系统暂存空间 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+此操作会清空双向链表的数据，系统暂存空间,谨慎操作 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000016}{待办事项}]null \end{DoxyRefDesc}
 
 
-在文件 Double\-Link.\-c 第 397 行定义.
+\begin{DoxyDate}{日期}
+2016-\/03-\/11 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+$\ast$\-List &D\-L\-Node &双向链表默认链表接口 \\\cline{1-3}
+\end{TabularC}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+此操作会清空双向链表的数据，系统暂存空间 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+此操作会清空双向链表的数据，系统暂存空间,谨慎操作 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000008}{待办事项}]null \end{DoxyRefDesc}
+
+
+在文件 Double\-Link.\-c 第 522 行定义.
 
 \hypertarget{_double_link_8h_a3c75e226a401f131a4808dd22b234cca}{\index{Double\-Link.\-h@{Double\-Link.\-h}!Insert\-List@{Insert\-List}}
 \index{Insert\-List@{Insert\-List}!DoubleLink.h@{Double\-Link.\-h}}
@@ -298,16 +516,83 @@ Drop\-List \par
 Insert\-List \par
 插入双向链表，根据双向链表的接口插入数据 
 
+\begin{DoxyDate}{日期}
+2016-\/03-\/11 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
 
-\begin{DoxyParams}[1]{参数}
-\mbox{\tt in}  & {\em $\ast$\-List} & 双向链表默认链表接口 \\
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
 \hline
-\mbox{\tt in}  & {\em $\ast$data} & 需要插入的无类型数据指针 \\
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+$\ast$\-List &D\-L\-Node &双向链表默认链表接口 \\\cline{1-3}
+$\ast$data &void &需要插入的数据指针 \\\cline{1-3}
+\end{TabularC}
+\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+插入双向链表，根据双向链表的接口插入数据 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000012}{待办事项}]null \end{DoxyRefDesc}
 
 
-在文件 Double\-Link.\-c 第 286 行定义.
+\begin{DoxyDate}{日期}
+2016-\/03-\/11 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+$\ast$\-List &D\-L\-Node &双向链表默认链表接口 \\\cline{1-3}
+$\ast$data &void &需要插入的数据指针 \\\cline{1-3}
+\end{TabularC}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+插入双向链表，根据双向链表的接口插入数据 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000004}{待办事项}]null \end{DoxyRefDesc}
+
+
+在文件 Double\-Link.\-c 第 356 行定义.
 
 \hypertarget{_double_link_8h_ae1482f414cdc6afe58c99a2615487057}{\index{Double\-Link.\-h@{Double\-Link.\-h}!Search\-List@{Search\-List}}
 \index{Search\-List@{Search\-List}!DoubleLink.h@{Double\-Link.\-h}}
@@ -323,18 +608,85 @@ Insert\-List \par
 Search\-List \par
 查询双向链表，通过给定的默认双向链表，判断数据以及数据地址是否存在 
 
+\begin{DoxyDate}{日期}
+2016-\/03-\/11 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
 
-\begin{DoxyParams}[1]{参数}
-\mbox{\tt in}  & {\em $\ast$\-List} & 双向链表默认链表接口 \\
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
 \hline
-\mbox{\tt in}  & {\em $\ast$data} & 需要查询的无类型数据指针 \\
-\hline
-\mbox{\tt in}  & {\em $\ast$\-Call\-Back\-Cmp} & 各种类型的回调函数接口 \\
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+$\ast$\-List &D\-L\-Node &双向链表默认链表接口 \\\cline{1-3}
+$\ast$data &void &需要查询的数据指针 \\\cline{1-3}
+$\ast$\-Call\-Back\-Cmp&int &判断回调函数 \\\cline{1-3}
+\end{TabularC}
+\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+查询双向链表，通过给定的默认双向链表，判断数据以及数据地址是否存在 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000010}{待办事项}]null \end{DoxyRefDesc}
 
 
-在文件 Double\-Link.\-c 第 189 行定义.
+\begin{DoxyDate}{日期}
+2016-\/03-\/11 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+$\ast$\-List &D\-L\-Node &双向链表默认链表接口 \\\cline{1-3}
+$\ast$data &void &需要查询的数据指针 \\\cline{1-3}
+$\ast$\-Call\-Back\-Cmp&int &判断回调函数 \\\cline{1-3}
+\end{TabularC}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+查询双向链表，通过给定的默认双向链表，判断数据以及数据地址是否存在 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000002}{待办事项}]null \end{DoxyRefDesc}
+
+
+在文件 Double\-Link.\-c 第 231 行定义.
 
 \hypertarget{_double_link_8h_a65b4c249cc137b01fc07b9f7ffbcf46e}{\index{Double\-Link.\-h@{Double\-Link.\-h}!Sequence\-List@{Sequence\-List}}
 \index{Sequence\-List@{Sequence\-List}!DoubleLink.h@{Double\-Link.\-h}}
@@ -350,18 +702,85 @@ Search\-List \par
 Sequence\-List \par
 排列双向链表函数通过flag的flag，选择合适的排序方法 
 
+\begin{DoxyDate}{日期}
+2016-\/03-\/11 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
 
-\begin{DoxyParams}[1]{参数}
-\mbox{\tt in}  & {\em $\ast$\-List} & 双向链表默认链表接口 \\
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
 \hline
-\mbox{\tt in}  & {\em flag} & 提供接口，让用户定义具体比较函数 flag = 0\-: 采用冒泡排序 1\-: 系统快排 2\-: 自写快排（默认采用） \\
-\hline
-\mbox{\tt in}  & {\em $\ast$\-Call\-Back\-Cmp} & 各种类型的回调函数接口 \\
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+$\ast$\-List &D\-L\-Node &双向链表默认链表接口 \\\cline{1-3}
+flag &int &采用排序方法的flag \\\cline{1-3}
+$\ast$\-Call\-Back\-Cmp&int &判断回调函数 \\\cline{1-3}
+\end{TabularC}
+\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+0： 为冒泡排序，耗费较多资源；1： 系统快排，最快 2： 自写快排 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+排列双向链表函数通过flag的flag，选择合适的排序方法 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000011}{待办事项}]null \end{DoxyRefDesc}
 
 
-在文件 Double\-Link.\-c 第 210 行定义.
+\begin{DoxyDate}{日期}
+2016-\/03-\/11 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+$\ast$\-List &D\-L\-Node &双向链表默认链表接口 \\\cline{1-3}
+flag &int &采用排序方法的flag \\\cline{1-3}
+$\ast$\-Call\-Back\-Cmp&int &判断回调函数 \\\cline{1-3}
+\end{TabularC}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+0： 为冒泡排序，耗费较多资源；1： 系统快排，最快 2： 自写快排 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+排列双向链表函数通过flag的flag，选择合适的排序方法 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000003}{待办事项}]null \end{DoxyRefDesc}
+
+
+在文件 Double\-Link.\-c 第 266 行定义.
 
 \hypertarget{_double_link_8h_a127d2524a910989b06852dea39a6c86f}{\index{Double\-Link.\-h@{Double\-Link.\-h}!Show\-List@{Show\-List}}
 \index{Show\-List@{Show\-List}!DoubleLink.h@{Double\-Link.\-h}}
@@ -375,23 +794,87 @@ Sequence\-List \par
 
 
 Show\-List \par
-遍历双向链表 
+遍历双向链表，根据flag选择显示格式，根据judge选择是否输出遍历结果 
 
+\begin{DoxyDate}{日期}
+2016-\/03-\/11 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
 
-\begin{DoxyParams}[1]{参数}
-\mbox{\tt in}  & {\em $\ast$\-List} & 双向链表默认链表接口 \\
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
 \hline
-\mbox{\tt in}  & {\em flag} & 提供接口，flag = 0\-: int显示 1\-: char字符显示 2\-: char $\ast$ 字符串显示 \\
-\hline
-\mbox{\tt in}  & {\em judge} & 提供接口，judge = 1\-: 不显示遍历结果 !=1\-: 显示遍历结果 \\
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+$\ast$\-List &D\-L\-Node &双向链表默认链表接口 \\\cline{1-3}
+flag &int &显示格式flag \\\cline{1-3}
+judge &int &是否显示flag \\\cline{1-3}
+\end{TabularC}
+\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{返回}
-返回值为遍历结果，有多少个 
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+nodenum &int &返回链表长度 \\\cline{1-3}
+\end{TabularC}
+
 \end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+遍历双向链表，根据flag选择显示格式，根据judge选择是否输出遍历结果 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000015}{待办事项}]null \end{DoxyRefDesc}
 
 
-在文件 Double\-Link.\-c 第 374 行定义.
+\begin{DoxyDate}{日期}
+2016-\/03-\/11 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+$\ast$\-List &D\-L\-Node &双向链表默认链表接口 \\\cline{1-3}
+flag &int &显示格式flag \\\cline{1-3}
+judge &int &是否显示flag \\\cline{1-3}
+\end{TabularC}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+nodenum &int &返回链表长度 \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+遍历双向链表，根据flag选择显示格式，根据judge选择是否输出遍历结果 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000007}{待办事项}]null \end{DoxyRefDesc}
+
+
+在文件 Double\-Link.\-c 第 485 行定义.
 
 \hypertarget{_double_link_8h_af42f761136d59421fe531e5f53db7d22}{\index{Double\-Link.\-h@{Double\-Link.\-h}!Update\-List@{Update\-List}}
 \index{Update\-List@{Update\-List}!DoubleLink.h@{Double\-Link.\-h}}
@@ -408,18 +891,85 @@ Show\-List \par
 Update\-List \par
 更新双向链表，通过查询原始的节点位置，修改数据 
 
+\begin{DoxyDate}{日期}
+2016-\/03-\/11 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
 
-\begin{DoxyParams}[1]{参数}
-\mbox{\tt in}  & {\em $\ast$\-List} & 双向链表默认链表接口 \\
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
 \hline
-\mbox{\tt in}  & {\em $\ast$data\-\_\-search} & 需要被更新的初始无类型数据指针 \\
-\hline
-\mbox{\tt in}  & {\em $\ast$data\-\_\-change} & 需要更新的无类型数据指针 \\
-\hline
-\mbox{\tt in}  & {\em $\ast$\-Call\-Back\-Cmp} & 各种类型的回调函数接口 \\
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+$\ast$\-List &D\-L\-Node &双向链表默认链表接口 \\\cline{1-3}
+$\ast$data\-\_\-search&void &需要查询的数据指针 \\\cline{1-3}
+$\ast$data\-\_\-change&void &需要修改的数据指针 \\\cline{1-3}
+$\ast$\-Call\-Back\-Cmp&int &判断回调函数 \\\cline{1-3}
+\end{TabularC}
+\\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+更新节点操作，一经操作无法返回，慎用！ 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+更新双向链表，通过查询原始的节点位置，修改数据 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000013}{待办事项}]null \end{DoxyRefDesc}
 
 
-在文件 Double\-Link.\-c 第 313 行定义.
+\begin{DoxyDate}{日期}
+2016-\/03-\/11 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+$\ast$\-List &D\-L\-Node &双向链表默认链表接口 \\\cline{1-3}
+$\ast$data\-\_\-search&void &需要查询的数据指针 \\\cline{1-3}
+$\ast$data\-\_\-change&void &需要修改的数据指针 \\\cline{1-3}
+$\ast$\-Call\-Back\-Cmp&int &判断回调函数 \\\cline{1-3}
+\end{TabularC}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+更新节点操作，一经操作无法返回，慎用！ 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+更新双向链表，通过查询原始的节点位置，修改数据 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000005}{待办事项}]null \end{DoxyRefDesc}
+
+
+在文件 Double\-Link.\-c 第 397 行定义.
 
