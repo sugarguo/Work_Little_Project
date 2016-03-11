@@ -1,0 +1,299 @@
+\hypertarget{_get_opt_test_8c}{\section{Get\-Opt\-Test.\-c 文件参考}
+\label{_get_opt_test_8c}\index{Get\-Opt\-Test.\-c@{Get\-Opt\-Test.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Double\-Link.\-h\char`\"{}}\\*
+\subsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structglobal_args__t}{global\-Args\-\_\-t}
+\begin{DoxyCompactList}\small\item\em 定义默认信息的结构体 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_get_opt_test_8c_a30c26ca0e13ccfaaeb18bbb24eea0217}{Show\-Line} (char $\ast$filename)
+\begin{DoxyCompactList}\small\item\em Show\-Line \par
+显示文件或者返回行数 \end{DoxyCompactList}\item 
+void \hyperlink{_get_opt_test_8c_a550c7ba0830bea9bb19ab64ee947d5e3}{V\-S\-\_\-\-Str\-R\-Trim} (char $\ast$p\-Str)
+\begin{DoxyCompactList}\small\item\em V\-S\-\_\-\-Str\-R\-Trim \par
+去除字符串右边空格 \end{DoxyCompactList}\item 
+void \hyperlink{_get_opt_test_8c_a8e8214da72e3d59826ecc3d59a7485f4}{V\-S\-\_\-\-Str\-L\-Trim} (char $\ast$p\-Str)
+\begin{DoxyCompactList}\small\item\em V\-S\-\_\-\-Str\-L\-Trim \par
+去除字符串左边空格 \end{DoxyCompactList}\item 
+\hyperlink{_double_link_8c_a9fcabae42ec5545a4c8f778a68a4e578}{D\-L\-Node} $\ast$ \hyperlink{_get_opt_test_8c_a8622568f1e4ea1d7db998a346f8e68e7}{Statistics\-Show} (\hyperlink{_double_link_8c_a9fcabae42ec5545a4c8f778a68a4e578}{D\-L\-Node} $\ast$List)
+\begin{DoxyCompactList}\small\item\em Statistics\-Show \par
+仅显示，不写入文件 \end{DoxyCompactList}\item 
+\hyperlink{_double_link_8c_a9fcabae42ec5545a4c8f778a68a4e578}{D\-L\-Node} $\ast$ \hyperlink{_get_opt_test_8c_a0dc3570bdc3b5e6b422cf4081976afff}{Statistics\-Content} (\hyperlink{_double_link_8c_a9fcabae42ec5545a4c8f778a68a4e578}{D\-L\-Node} $\ast$List)
+\begin{DoxyCompactList}\small\item\em Statistics\-Content \par
+统计词频,并写入文件 \end{DoxyCompactList}\item 
+\hyperlink{_double_link_8c_a9fcabae42ec5545a4c8f778a68a4e578}{D\-L\-Node} $\ast$ \hyperlink{_get_opt_test_8c_ae823682b8b86c3bd035fdb849e4f3d1f}{Get\-File\-Content} (\hyperlink{_double_link_8c_a9fcabae42ec5545a4c8f778a68a4e578}{D\-L\-Node} $\ast$List)
+\begin{DoxyCompactList}\small\item\em Get\-File\-Content \par
+回调函数，比较内容是否相同 \end{DoxyCompactList}\item 
+int \hyperlink{_get_opt_test_8c_ab891633b1638654bdb2820c40f2cb6af}{Get\-Statistics} (int hflag, int sflag, int oflag)
+\begin{DoxyCompactList}\small\item\em Get\-Statistics \par
+运行的主函数 \end{DoxyCompactList}\item 
+void \hyperlink{_get_opt_test_8c_acf5088e61b616f77674f62a9ba3b86b7}{display\-\_\-usage} (void)
+\begin{DoxyCompactList}\small\item\em display\-\_\-usage \par
+显示错误信息 \end{DoxyCompactList}\item 
+void \hyperlink{_get_opt_test_8c_a97dc5d244dcdb842fab654a276322639}{convert\-\_\-document} (void)
+\begin{DoxyCompactList}\small\item\em convert\-\_\-document \par
+相应命令程序 \end{DoxyCompactList}\item 
+int \hyperlink{_get_opt_test_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em main \par
+主函数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structglobal_args__t}{global\-Args\-\_\-t} \hyperlink{_get_opt_test_8c_a6240b2c6874900a3e7b9257fb8ac4c14}{global\-Args}
+\end{DoxyCompactItemize}
+
+
+\subsection{函数说明}
+\hypertarget{_get_opt_test_8c_a97dc5d244dcdb842fab654a276322639}{\index{Get\-Opt\-Test.\-c@{Get\-Opt\-Test.\-c}!convert\-\_\-document@{convert\-\_\-document}}
+\index{convert\-\_\-document@{convert\-\_\-document}!GetOptTest.c@{Get\-Opt\-Test.\-c}}
+\subsubsection[{convert\-\_\-document}]{\setlength{\rightskip}{0pt plus 5cm}void convert\-\_\-document (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_get_opt_test_8c_a97dc5d244dcdb842fab654a276322639}
+
+
+convert\-\_\-document \par
+相应命令程序 
+
+
+\begin{DoxyParams}[1]{参数}
+\mbox{\tt in}  & {\em choose} & 选择flag \\
+\hline
+\mbox{\tt in}  & {\em getfilename} & 输入的文件名 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Get\-Opt\-Test.\-c 第 287 行定义.
+
+\hypertarget{_get_opt_test_8c_acf5088e61b616f77674f62a9ba3b86b7}{\index{Get\-Opt\-Test.\-c@{Get\-Opt\-Test.\-c}!display\-\_\-usage@{display\-\_\-usage}}
+\index{display\-\_\-usage@{display\-\_\-usage}!GetOptTest.c@{Get\-Opt\-Test.\-c}}
+\subsubsection[{display\-\_\-usage}]{\setlength{\rightskip}{0pt plus 5cm}void display\-\_\-usage (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_get_opt_test_8c_acf5088e61b616f77674f62a9ba3b86b7}
+
+
+display\-\_\-usage \par
+显示错误信息 
+
+
+\begin{DoxyParams}[1]{参数}
+\mbox{\tt in}  & {\em $\ast$one} & 比较的第一个内容 \\
+\hline
+\mbox{\tt in}  & {\em $\ast$two} & 比较的第二个内容 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值为两个数的减法结果，根据等于大小零判断 
+\end{DoxyReturn}
+
+
+在文件 Get\-Opt\-Test.\-c 第 275 行定义.
+
+\hypertarget{_get_opt_test_8c_ae823682b8b86c3bd035fdb849e4f3d1f}{\index{Get\-Opt\-Test.\-c@{Get\-Opt\-Test.\-c}!Get\-File\-Content@{Get\-File\-Content}}
+\index{Get\-File\-Content@{Get\-File\-Content}!GetOptTest.c@{Get\-Opt\-Test.\-c}}
+\subsubsection[{Get\-File\-Content}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-L\-Node}$\ast$ Get\-File\-Content (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-L\-Node} $\ast$}]{List}
+\end{DoxyParamCaption}
+)}}\label{_get_opt_test_8c_ae823682b8b86c3bd035fdb849e4f3d1f}
+
+
+Get\-File\-Content \par
+回调函数，比较内容是否相同 
+
+
+\begin{DoxyParams}[1]{参数}
+\mbox{\tt in}  & {\em $\ast$one} & 比较的第一个内容 \\
+\hline
+\mbox{\tt in}  & {\em $\ast$two} & 比较的第二个内容 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值为两个数的减法结果，根据等于大小零判断 
+\end{DoxyReturn}
+
+
+在文件 Get\-Opt\-Test.\-c 第 172 行定义.
+
+\hypertarget{_get_opt_test_8c_ab891633b1638654bdb2820c40f2cb6af}{\index{Get\-Opt\-Test.\-c@{Get\-Opt\-Test.\-c}!Get\-Statistics@{Get\-Statistics}}
+\index{Get\-Statistics@{Get\-Statistics}!GetOptTest.c@{Get\-Opt\-Test.\-c}}
+\subsubsection[{Get\-Statistics}]{\setlength{\rightskip}{0pt plus 5cm}int Get\-Statistics (
+\begin{DoxyParamCaption}
+\item[{int}]{hflag, }
+\item[{int}]{sflag, }
+\item[{int}]{oflag}
+\end{DoxyParamCaption}
+)}}\label{_get_opt_test_8c_ab891633b1638654bdb2820c40f2cb6af}
+
+
+Get\-Statistics \par
+运行的主函数 
+
+
+\begin{DoxyParams}[1]{参数}
+\mbox{\tt in}  & {\em hflag} & 判断的第一个flag \\
+\hline
+\mbox{\tt in}  & {\em sflag} & 判断的第二个flag \\
+\hline
+\mbox{\tt in}  & {\em oflag} & 判断的第三个flag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值0 
+\end{DoxyReturn}
+
+
+在文件 Get\-Opt\-Test.\-c 第 223 行定义.
+
+\hypertarget{_get_opt_test_8c_a3c04138a5bfe5d72780bb7e82a18e627}{\index{Get\-Opt\-Test.\-c@{Get\-Opt\-Test.\-c}!main@{main}}
+\index{main@{main}!GetOptTest.c@{Get\-Opt\-Test.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{_get_opt_test_8c_a3c04138a5bfe5d72780bb7e82a18e627}
+
+
+main \par
+主函数 
+
+
+\begin{DoxyParams}[1]{参数}
+\mbox{\tt in}  & {\em opt} & 系统的getopt的初始化 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值为运行结果 
+\end{DoxyReturn}
+
+
+在文件 Get\-Opt\-Test.\-c 第 343 行定义.
+
+\hypertarget{_get_opt_test_8c_a30c26ca0e13ccfaaeb18bbb24eea0217}{\index{Get\-Opt\-Test.\-c@{Get\-Opt\-Test.\-c}!Show\-Line@{Show\-Line}}
+\index{Show\-Line@{Show\-Line}!GetOptTest.c@{Get\-Opt\-Test.\-c}}
+\subsubsection[{Show\-Line}]{\setlength{\rightskip}{0pt plus 5cm}int Show\-Line (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{filename}
+\end{DoxyParamCaption}
+)}}\label{_get_opt_test_8c_a30c26ca0e13ccfaaeb18bbb24eea0217}
+
+
+Show\-Line \par
+显示文件或者返回行数 
+
+
+\begin{DoxyParams}[1]{参数}
+\mbox{\tt in}  & {\em $\ast$filename} & 比较的第一个内容 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值 
+\end{DoxyReturn}
+
+
+在文件 Get\-Opt\-Test.\-c 第 43 行定义.
+
+\hypertarget{_get_opt_test_8c_a0dc3570bdc3b5e6b422cf4081976afff}{\index{Get\-Opt\-Test.\-c@{Get\-Opt\-Test.\-c}!Statistics\-Content@{Statistics\-Content}}
+\index{Statistics\-Content@{Statistics\-Content}!GetOptTest.c@{Get\-Opt\-Test.\-c}}
+\subsubsection[{Statistics\-Content}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-L\-Node}$\ast$ Statistics\-Content (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-L\-Node} $\ast$}]{List}
+\end{DoxyParamCaption}
+)}}\label{_get_opt_test_8c_a0dc3570bdc3b5e6b422cf4081976afff}
+
+
+Statistics\-Content \par
+统计词频,并写入文件 
+
+
+\begin{DoxyParams}[1]{参数}
+\mbox{\tt in}  & {\em $\ast$\-List} & 双向链表默认链表接口 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Get\-Opt\-Test.\-c 第 132 行定义.
+
+\hypertarget{_get_opt_test_8c_a8622568f1e4ea1d7db998a346f8e68e7}{\index{Get\-Opt\-Test.\-c@{Get\-Opt\-Test.\-c}!Statistics\-Show@{Statistics\-Show}}
+\index{Statistics\-Show@{Statistics\-Show}!GetOptTest.c@{Get\-Opt\-Test.\-c}}
+\subsubsection[{Statistics\-Show}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-L\-Node}$\ast$ Statistics\-Show (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-L\-Node} $\ast$}]{List}
+\end{DoxyParamCaption}
+)}}\label{_get_opt_test_8c_a8622568f1e4ea1d7db998a346f8e68e7}
+
+
+Statistics\-Show \par
+仅显示，不写入文件 
+
+
+\begin{DoxyParams}[1]{参数}
+\mbox{\tt in}  & {\em $\ast$\-List} & 双向链表默认链表接口 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Get\-Opt\-Test.\-c 第 105 行定义.
+
+\hypertarget{_get_opt_test_8c_a8e8214da72e3d59826ecc3d59a7485f4}{\index{Get\-Opt\-Test.\-c@{Get\-Opt\-Test.\-c}!V\-S\-\_\-\-Str\-L\-Trim@{V\-S\-\_\-\-Str\-L\-Trim}}
+\index{V\-S\-\_\-\-Str\-L\-Trim@{V\-S\-\_\-\-Str\-L\-Trim}!GetOptTest.c@{Get\-Opt\-Test.\-c}}
+\subsubsection[{V\-S\-\_\-\-Str\-L\-Trim}]{\setlength{\rightskip}{0pt plus 5cm}void V\-S\-\_\-\-Str\-L\-Trim (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{p\-Str}
+\end{DoxyParamCaption}
+)}}\label{_get_opt_test_8c_a8e8214da72e3d59826ecc3d59a7485f4}
+
+
+V\-S\-\_\-\-Str\-L\-Trim \par
+去除字符串左边空格 
+
+
+\begin{DoxyParams}[1]{参数}
+\mbox{\tt in}  & {\em $\ast$p\-Str} & 需要处理的字符串 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Get\-Opt\-Test.\-c 第 82 行定义.
+
+\hypertarget{_get_opt_test_8c_a550c7ba0830bea9bb19ab64ee947d5e3}{\index{Get\-Opt\-Test.\-c@{Get\-Opt\-Test.\-c}!V\-S\-\_\-\-Str\-R\-Trim@{V\-S\-\_\-\-Str\-R\-Trim}}
+\index{V\-S\-\_\-\-Str\-R\-Trim@{V\-S\-\_\-\-Str\-R\-Trim}!GetOptTest.c@{Get\-Opt\-Test.\-c}}
+\subsubsection[{V\-S\-\_\-\-Str\-R\-Trim}]{\setlength{\rightskip}{0pt plus 5cm}void V\-S\-\_\-\-Str\-R\-Trim (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{p\-Str}
+\end{DoxyParamCaption}
+)}}\label{_get_opt_test_8c_a550c7ba0830bea9bb19ab64ee947d5e3}
+
+
+V\-S\-\_\-\-Str\-R\-Trim \par
+去除字符串右边空格 
+
+
+\begin{DoxyParams}[1]{参数}
+\mbox{\tt in}  & {\em $\ast$p\-Str} & 需要处理的字符串 \\
+\hline
+\end{DoxyParams}
+
+
+在文件 Get\-Opt\-Test.\-c 第 66 行定义.
+
+
+
+\subsection{变量说明}
+\hypertarget{_get_opt_test_8c_a6240b2c6874900a3e7b9257fb8ac4c14}{\index{Get\-Opt\-Test.\-c@{Get\-Opt\-Test.\-c}!global\-Args@{global\-Args}}
+\index{global\-Args@{global\-Args}!GetOptTest.c@{Get\-Opt\-Test.\-c}}
+\subsubsection[{global\-Args}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf global\-Args\-\_\-t} global\-Args}}\label{_get_opt_test_8c_a6240b2c6874900a3e7b9257fb8ac4c14}

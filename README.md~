@@ -1,3 +1,4 @@
+
 # Work_Little_Project 实习工作小项目
 
 
@@ -10,7 +11,6 @@
 * 重写比较函数，采用新的回调函数
 * 添加新的排序算法，两种快速排序方法
 * 增加说明文档，上一版本Doxyfile文件仅支持win系统生成，本次更新Linux默认Doxyfile文件
-* make 后，运行 ./GetOptTest text.txt [-h -l -s -o outfilename -v -p]
 > * 重构双向链表，更易用，更方便，重新理解回调函数，采用新的排序方法，冒泡慢了点！
 
 
