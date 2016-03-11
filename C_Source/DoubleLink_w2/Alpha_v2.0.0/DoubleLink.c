@@ -408,6 +408,6 @@ void DropList(DLNode *List)
 		p = p->next;
 		free(temp);
 	}
-	free(List);
+	//free(List);
 }
 

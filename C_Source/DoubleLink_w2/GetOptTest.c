@@ -260,6 +260,7 @@ int GetStatistics( int hflag, int sflag, int oflag)
 	printf("Statistics time : %f \n\n", (float)(end_time - start_time) / CLOCKS_PER_SEC  );
 
 	DropList(List);
+	free(List);
 	
 	return 0;
 
@@ -403,7 +404,7 @@ int main(int argc, char **argv)
 
 	for(opt = globalArgs.fflag + 1; opt < argc; opt++)
 	{
-		printf("opt %d: %s  \n", opt,argv[opt]);
+		printf("Read file %d: %s  \n", opt,argv[opt]);
 		globalArgs.filename = argv[opt];
 		globalArgs.bytes = 0;
 		globalArgs.words = 0;
