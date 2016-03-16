@@ -1,6 +1,14 @@
 # Work_Little_Project 实习工作小项目
 
 
+### Week_3 第三周
+##### 【C语言】
+* 第三周第一次上传
+* shell命令ls的初步模拟
+* make 后，运行 ./LsDoubleLink /home/用户名 [-c -k -t -m -l -a -v]
+> * 初步模拟ls的运行，支持递归，可以判断权限，并输出彩色字体，可以根据文件名，大小，时间排序
+
+
 ### Week_2 第二周
 ##### 【C语言】
 * 通过 cppcheck valgrind 内存检测

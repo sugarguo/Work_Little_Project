@@ -33,13 +33,14 @@ struct globalArgs_t{
 	int mflag;				///<是否横向输出的flag
 	int lflag;				///<是否长格式显示文件的flag
 	int aflag;				///<是否显示隐藏文件的flag
+	int rflag;				///<是否递归显示文件的flag
 	int pflag;				///<文件个数标量
 	int pnflag;				///<文件个数标量
 	int plflag;				///<字符长度标量
 	int pzlflag;			///<字符长度标量
 }globalArgs;
 
-static const char *optString = "cktmlav?";
+static const char *optString = "cktmlarv?";
 
 ///@brief 定义默认文件信息的结构体
 struct FileInfo
@@ -540,8 +541,6 @@ DLNode *GetDoubleLink(char path[])
 
 	List = CreateList();
 
-	int opt = 0;
-
 	if((dirptr = opendir(path)) == NULL)  
 	{  
 		printf("Open Directory %s Error！\n",  path); 
@@ -580,6 +579,66 @@ DLNode *GetDoubleLink(char path[])
 
 
 /**
+ * @brief listAllFiles \n
+ * 递归输出文件
+ * @date   2016-03-16
+ * @author Sugarguo
+ * @param  : 参数说明如下表：
+ * name      | type      |description of param 
+ * ----------|-----------|--------------------
+ * dirname[] | char      |文件目录绝对路径（支持. ..）
+ * @return    返回值说明如下：
+ * name      | type      | description of value
+ * ----------|-----------|----------------------
+ * null      | null      | null
+ * @warning   null
+ * @attention null
+ * @note      null
+ * @todo      null
+ */
+void listAllFiles(char dirname[])
+{
+	DIR *dirptr = NULL;  
+	struct dirent *entry;
+	struct stat buf;
+  	char allpath[255];
+
+	dirptr = opendir(dirname);
+	if(dirptr == NULL)
+	{
+		printf("open dir %s error!\n",dirname);
+		exit(1);
+	}
+
+	while((entry = readdir(dirptr)) != NULL)
+	{
+		if(!strcmp(entry->d_name,".")||!strcmp(entry->d_name,".."))
+			continue;
+		sprintf(allpath,"%s/%s",dirname,entry->d_name);
+
+		
+		memset(&buf,0,sizeof(struct stat));
+		//lstat(allpath,&buf);
+		if (stat(allpath,&buf) != 0 )
+		{
+			perror("stat");
+		}
+
+		if(S_ISDIR(buf.st_mode))
+		{
+			printf("\n\033[1;34m%s\033[0m\n",entry->d_name);
+			listAllFiles(allpath);
+		}
+		else
+		{
+			printf("%s,  ",entry->d_name);
+		}
+	}
+	closedir(dirptr);
+}
+
+
+/**
  * @brief display_usage \n
  * 词频统计测试文件通过getopt函数的错误回显
  * @date   2016-03-16
@@ -599,7 +658,7 @@ DLNode *GetDoubleLink(char path[])
  */
 void display_usage( void )
 {
-	puts("Such as -f \"filename\" -o \"outfilename\" -h (high Sequence) -l (Show Line) -s (Shwo SequenceList) -p (Show EndContent)\n\n");
+	puts("Such as -c -k -t -m -l -a -v\n\n");
 	exit(EXIT_FAILURE);
 }
 
@@ -705,6 +764,7 @@ int main(int argc, char **argv)
 	globalArgs.lflag = 1;
 	globalArgs.iflag = 0;
 	globalArgs.aflag = 1;
+	globalArgs.rflag = 1;
 	globalArgs.pflag = 0;
 	globalArgs.pnflag = 1;
 	globalArgs.plflag = 0;
@@ -739,6 +799,10 @@ int main(int argc, char **argv)
 				globalArgs.iflag++;
 				globalArgs.aflag = 0;
 				break;
+			case 'r':
+				globalArgs.iflag++;
+				globalArgs.rflag = 0;
+				break;
 			case 'v':
 				globalArgs.iflag++;
 				printf("\nVersion: 1.0.0\n");
@@ -762,6 +826,13 @@ int main(int argc, char **argv)
 		strcpy(globalArgs.path , argv[globalArgs.iflag + 1]);
 
 
-	convert_document();
-    return EXIT_SUCCESS;
+	if(globalArgs.rflag == 0)
+	{
+		listAllFiles(globalArgs.path);
+	}
+	else
+	{
+		convert_document();
+	}
+	return EXIT_SUCCESS;
 }
