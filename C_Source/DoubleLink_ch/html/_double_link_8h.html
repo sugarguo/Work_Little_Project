@@ -1,0 +1,1138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>DoubleLink: DoubleLink.h 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="favicon.ico"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">DoubleLink
+   &#160;<span id="projectnumber">v2.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="pages.html"><span>相关页面</span></a></li>
+      <li><a href="annotated.html"><span>结构体</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>全局定义</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_double_link_8h.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>结构体</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>类型定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>页</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">结构体</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">DoubleLink.h 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>通用双向链表 <br/>
+双向链表的动态创建，增删改查，支持多种数据格式，提供冒泡 快排方法。  
+<a href="#details">更多...</a></p>
+
+<p><a href="_double_link_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+结构体</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct___double_link.html">_DoubleLink</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">定义双向链表的结构体  <a href="struct___double_link.html#details">更多...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:a9fcabae42ec5545a4c8f778a68a4e578"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct___double_link.html">_DoubleLink</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_double_link_8h.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a></td></tr>
+<tr class="memdesc:a9fcabae42ec5545a4c8f778a68a4e578"><td class="mdescLeft">&#160;</td><td class="mdescRight">定义双向链表的结构体  <a href="#a9fcabae42ec5545a4c8f778a68a4e578">更多...</a><br/></td></tr>
+<tr class="separator:a9fcabae42ec5545a4c8f778a68a4e578"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:aec0d0b1312b68b305a5ec9cd4ae3c6c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_double_link_8h.html#aec0d0b1312b68b305a5ec9cd4ae3c6c3">CreateList</a> ()</td></tr>
+<tr class="memdesc:aec0d0b1312b68b305a5ec9cd4ae3c6c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">CreateList <br/>
+创建双向链表  <a href="#aec0d0b1312b68b305a5ec9cd4ae3c6c3">更多...</a><br/></td></tr>
+<tr class="separator:aec0d0b1312b68b305a5ec9cd4ae3c6c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e2ed3c9809675c7d6be50c86880b324"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_double_link_8h.html#a1e2ed3c9809675c7d6be50c86880b324">CallBackCmpInt</a> (const void *one, const void *two)</td></tr>
+<tr class="memdesc:a1e2ed3c9809675c7d6be50c86880b324"><td class="mdescLeft">&#160;</td><td class="mdescRight">CallBackCmpInt <br/>
+回调函数，比较内容是否相同  <a href="#a1e2ed3c9809675c7d6be50c86880b324">更多...</a><br/></td></tr>
+<tr class="separator:a1e2ed3c9809675c7d6be50c86880b324"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5ccd002bc1fef51bc54952026d308a2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_double_link_8h.html#ad5ccd002bc1fef51bc54952026d308a2">CallBackCmpChar</a> (const void *one, const void *two)</td></tr>
+<tr class="memdesc:ad5ccd002bc1fef51bc54952026d308a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">CallBackCmpChar <br/>
+回调函数，比较内容是否相同  <a href="#ad5ccd002bc1fef51bc54952026d308a2">更多...</a><br/></td></tr>
+<tr class="separator:ad5ccd002bc1fef51bc54952026d308a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4872b9b04c64d8f80c68a1010142094"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_double_link_8h.html#ac4872b9b04c64d8f80c68a1010142094">CallBackCmpStr</a> (const void *one, const void *two)</td></tr>
+<tr class="memdesc:ac4872b9b04c64d8f80c68a1010142094"><td class="mdescLeft">&#160;</td><td class="mdescRight">CallBackCmpStr <br/>
+回调函数，比较内容是否相同  <a href="#ac4872b9b04c64d8f80c68a1010142094">更多...</a><br/></td></tr>
+<tr class="separator:ac4872b9b04c64d8f80c68a1010142094"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae14dec8d152bc2fe872c9e7b80364c52"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_double_link_8h.html#ae14dec8d152bc2fe872c9e7b80364c52">CallBackCmpStr_K</a> (const void *one, const void *two)</td></tr>
+<tr class="memdesc:ae14dec8d152bc2fe872c9e7b80364c52"><td class="mdescLeft">&#160;</td><td class="mdescRight">CallBackCmpStr_K <br/>
+回调函数，比较内容是否相同  <a href="#ae14dec8d152bc2fe872c9e7b80364c52">更多...</a><br/></td></tr>
+<tr class="separator:ae14dec8d152bc2fe872c9e7b80364c52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae7d8cc126e2938b9f152c300b83f7d3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_double_link_8h.html#aae7d8cc126e2938b9f152c300b83f7d3">CallBackShow</a> (void *one, int flag)</td></tr>
+<tr class="memdesc:aae7d8cc126e2938b9f152c300b83f7d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">CallBackShow <br/>
+回调函数，显示内容  <a href="#aae7d8cc126e2938b9f152c300b83f7d3">更多...</a><br/></td></tr>
+<tr class="separator:aae7d8cc126e2938b9f152c300b83f7d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1482f414cdc6afe58c99a2615487057"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_double_link_8h.html#ae1482f414cdc6afe58c99a2615487057">SearchList</a> (<a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a> *List, void *data, int(*CallBackCmp)(const void *, const void *))</td></tr>
+<tr class="memdesc:ae1482f414cdc6afe58c99a2615487057"><td class="mdescLeft">&#160;</td><td class="mdescRight">SearchList <br/>
+查询双向链表，通过给定的默认双向链表，判断数据以及数据地址是否存在  <a href="#ae1482f414cdc6afe58c99a2615487057">更多...</a><br/></td></tr>
+<tr class="separator:ae1482f414cdc6afe58c99a2615487057"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65b4c249cc137b01fc07b9f7ffbcf46e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_double_link_8h.html#a65b4c249cc137b01fc07b9f7ffbcf46e">SequenceList</a> (<a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a> *List, int flag, int(*CallBackCmp)(const void *, const void *))</td></tr>
+<tr class="memdesc:a65b4c249cc137b01fc07b9f7ffbcf46e"><td class="mdescLeft">&#160;</td><td class="mdescRight">SequenceList <br/>
+排列双向链表函数通过flag的flag，选择合适的排序方法  <a href="#a65b4c249cc137b01fc07b9f7ffbcf46e">更多...</a><br/></td></tr>
+<tr class="separator:a65b4c249cc137b01fc07b9f7ffbcf46e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c75e226a401f131a4808dd22b234cca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_double_link_8h.html#a3c75e226a401f131a4808dd22b234cca">InsertList</a> (<a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a> *List, void *data)</td></tr>
+<tr class="memdesc:a3c75e226a401f131a4808dd22b234cca"><td class="mdescLeft">&#160;</td><td class="mdescRight">InsertList <br/>
+插入双向链表，根据双向链表的接口插入数据  <a href="#a3c75e226a401f131a4808dd22b234cca">更多...</a><br/></td></tr>
+<tr class="separator:a3c75e226a401f131a4808dd22b234cca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af42f761136d59421fe531e5f53db7d22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_double_link_8h.html#af42f761136d59421fe531e5f53db7d22">UpdateList</a> (<a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a> *List, void *data_search, void *data_change, int(*CallBackCmp)(const void *, const void *))</td></tr>
+<tr class="memdesc:af42f761136d59421fe531e5f53db7d22"><td class="mdescLeft">&#160;</td><td class="mdescRight">UpdateList <br/>
+更新双向链表，通过查询原始的节点位置，修改数据  <a href="#af42f761136d59421fe531e5f53db7d22">更多...</a><br/></td></tr>
+<tr class="separator:af42f761136d59421fe531e5f53db7d22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa397cd5b88823e339f63a646497bd260"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_double_link_8h.html#aa397cd5b88823e339f63a646497bd260">DeleteList</a> (<a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a> *List, void *data, int(*CallBackCmp)(const void *, const void *))</td></tr>
+<tr class="memdesc:aa397cd5b88823e339f63a646497bd260"><td class="mdescLeft">&#160;</td><td class="mdescRight">DeleteList <br/>
+删除双向链表，查询节点位置，将前后地址相连接，然后free此节点位置  <a href="#aa397cd5b88823e339f63a646497bd260">更多...</a><br/></td></tr>
+<tr class="separator:aa397cd5b88823e339f63a646497bd260"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a127d2524a910989b06852dea39a6c86f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_double_link_8h.html#a127d2524a910989b06852dea39a6c86f">ShowList</a> (<a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a> *List, int flag, int judge)</td></tr>
+<tr class="memdesc:a127d2524a910989b06852dea39a6c86f"><td class="mdescLeft">&#160;</td><td class="mdescRight">ShowList <br/>
+遍历双向链表，根据flag选择显示格式，根据judge选择是否输出遍历结果  <a href="#a127d2524a910989b06852dea39a6c86f">更多...</a><br/></td></tr>
+<tr class="separator:a127d2524a910989b06852dea39a6c86f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15364937ad58d693d28671f21106d2ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_double_link_8h.html#a15364937ad58d693d28671f21106d2ec">DropList</a> (<a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a> *List)</td></tr>
+<tr class="memdesc:a15364937ad58d693d28671f21106d2ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">DropList <br/>
+删除双向链表，全部删除，释放内存空间  <a href="#a15364937ad58d693d28671f21106d2ec">更多...</a><br/></td></tr>
+<tr class="separator:a15364937ad58d693d28671f21106d2ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>通用双向链表 <br/>
+双向链表的动态创建，增删改查，支持多种数据格式，提供冒泡 快排方法。 </p>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo  <a href="#" onclick="location.href='mai'+'lto:'+'sug'+'ar'+'guo'+'@l'+'ive'+'.c'+'om'; return false;">sugar<span style="display: none;">.nosp@m.</span>guo@<span style="display: none;">.nosp@m.</span>live.<span style="display: none;">.nosp@m.</span>com</a> </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2016/03/08 20:00 </dd></dl>
+<dl class="section version"><dt>版本</dt><dd>v2.0.0 </dd></dl>
+<dl class="section copyright"><dt>版权所有</dt><dd>EmbedWay 恒为科技武汉研发中心 By:Sugarguo </dd></dl>
+
+<p>在文件 <a class="el" href="_double_link_8h_source.html">DoubleLink.h</a> 中定义.</p>
+</div><h2 class="groupheader">类型定义说明</h2>
+<a class="anchor" id="a9fcabae42ec5545a4c8f778a68a4e578"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct___double_link.html">_DoubleLink</a> <a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>定义双向链表的结构体 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">*data</td><td>双向链表中的数据 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*back</td><td>返回指针 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*next</td><td>前进指针 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a class="anchor" id="ad5ccd002bc1fef51bc54952026d308a2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CallBackCmpChar </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>one</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>two</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CallBackCmpChar <br/>
+回调函数，比较内容是否相同 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">*one</td><td>比较的第一个内容 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*two</td><td>比较的第二个内容 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值为两个字母比较结果 </dd></dl>
+
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00087">87</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1e2ed3c9809675c7d6be50c86880b324"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CallBackCmpInt </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>one</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>two</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CallBackCmpInt <br/>
+回调函数，比较内容是否相同 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">*one</td><td>比较的第一个内容 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*two</td><td>比较的第二个内容 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值为两个数的减法结果，根据等于大小零判断 </dd></dl>
+
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00074">74</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac4872b9b04c64d8f80c68a1010142094"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CallBackCmpStr </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>one</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>two</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CallBackCmpStr <br/>
+回调函数，比较内容是否相同 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">*one</td><td>比较的第一个内容 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*two</td><td>比较的第二个内容 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值为两个单词比较结果 </dd></dl>
+
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00100">100</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae14dec8d152bc2fe872c9e7b80364c52"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CallBackCmpStr_K </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>one</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>two</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CallBackCmpStr_K <br/>
+回调函数，比较内容是否相同 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">*one</td><td>比较的第一个内容 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*two</td><td>比较的第二个内容 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值为两个单词比较结果 </dd></dl>
+
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00113">113</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="aae7d8cc126e2938b9f152c300b83f7d3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CallBackShow </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>one</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>flag</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CallBackShow <br/>
+回调函数，显示内容 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">*one</td><td>需要显示的内容 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">flag</td><td>提供接口，flag = 0: int显示 1: char字符显示 2: char * 字符串显示 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00125">125</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="aec0d0b1312b68b305a5ec9cd4ae3c6c3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a>* CreateList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CreateList <br/>
+创建双向链表 </p>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>创建双向链表,返回指针 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000009">待办事项:</a></b></dt><dd>null </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>创建双向链表,返回指针 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">待办事项:</a></b></dt><dd>null </dd></dl>
+
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00048">48</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa397cd5b88823e339f63a646497bd260"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DeleteList </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a> *&#160;</td>
+          <td class="paramname"><em>List</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int(*)(const void *, const void *)&#160;</td>
+          <td class="paramname"><em>CallBackCmp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DeleteList <br/>
+删除双向链表，查询节点位置，将前后地址相连接，然后free此节点位置 </p>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+<tr>
+<td>*data </td><td>void </td><td>显示格式flag </td></tr>
+<tr>
+<td>*CallBackCmp</td><td>int </td><td>判断回调函数 </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>删除节点操作，一经操作无法返回，慎用！ </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>删除双向链表，查询节点位置，将前后地址相连接，然后free此节点位置 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000014">待办事项:</a></b></dt><dd>null </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+<tr>
+<td>*data </td><td>void </td><td>显示格式flag </td></tr>
+<tr>
+<td>*CallBackCmp</td><td>int </td><td>判断回调函数 </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>删除节点操作，一经操作无法返回，慎用！ </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>删除双向链表，查询节点位置，将前后地址相连接，然后free此节点位置 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000006">待办事项:</a></b></dt><dd>null </dd></dl>
+
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00435">435</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a15364937ad58d693d28671f21106d2ec"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DropList </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a> *&#160;</td>
+          <td class="paramname"><em>List</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DropList <br/>
+删除双向链表，全部删除，释放内存空间 </p>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>此操作会清空双向链表的数据，系统暂存空间 </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>此操作会清空双向链表的数据，系统暂存空间,谨慎操作 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000016">待办事项:</a></b></dt><dd>null </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>此操作会清空双向链表的数据，系统暂存空间 </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>此操作会清空双向链表的数据，系统暂存空间,谨慎操作 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000008">待办事项:</a></b></dt><dd>null </dd></dl>
+
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00522">522</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3c75e226a401f131a4808dd22b234cca"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InsertList </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a> *&#160;</td>
+          <td class="paramname"><em>List</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>InsertList <br/>
+插入双向链表，根据双向链表的接口插入数据 </p>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+<tr>
+<td>*data </td><td>void </td><td>需要插入的数据指针 </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>插入双向链表，根据双向链表的接口插入数据 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000012">待办事项:</a></b></dt><dd>null </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+<tr>
+<td>*data </td><td>void </td><td>需要插入的数据指针 </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>插入双向链表，根据双向链表的接口插入数据 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000004">待办事项:</a></b></dt><dd>null </dd></dl>
+
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00356">356</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae1482f414cdc6afe58c99a2615487057"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a>* SearchList </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a> *&#160;</td>
+          <td class="paramname"><em>List</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int(*)(const void *, const void *)&#160;</td>
+          <td class="paramname"><em>CallBackCmp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SearchList <br/>
+查询双向链表，通过给定的默认双向链表，判断数据以及数据地址是否存在 </p>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+<tr>
+<td>*data </td><td>void </td><td>需要查询的数据指针 </td></tr>
+<tr>
+<td>*CallBackCmp</td><td>int </td><td>判断回调函数 </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>查询双向链表，通过给定的默认双向链表，判断数据以及数据地址是否存在 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000010">待办事项:</a></b></dt><dd>null </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+<tr>
+<td>*data </td><td>void </td><td>需要查询的数据指针 </td></tr>
+<tr>
+<td>*CallBackCmp</td><td>int </td><td>判断回调函数 </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>查询双向链表，通过给定的默认双向链表，判断数据以及数据地址是否存在 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">待办事项:</a></b></dt><dd>null </dd></dl>
+
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00231">231</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a65b4c249cc137b01fc07b9f7ffbcf46e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a>* SequenceList </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a> *&#160;</td>
+          <td class="paramname"><em>List</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>flag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int(*)(const void *, const void *)&#160;</td>
+          <td class="paramname"><em>CallBackCmp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>SequenceList <br/>
+排列双向链表函数通过flag的flag，选择合适的排序方法 </p>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+<tr>
+<td>flag </td><td>int </td><td>采用排序方法的flag </td></tr>
+<tr>
+<td>*CallBackCmp</td><td>int </td><td>判断回调函数 </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>0： 为冒泡排序，耗费较多资源；1： 系统快排，最快 2： 自写快排 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>排列双向链表函数通过flag的flag，选择合适的排序方法 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000011">待办事项:</a></b></dt><dd>null </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+<tr>
+<td>flag </td><td>int </td><td>采用排序方法的flag </td></tr>
+<tr>
+<td>*CallBackCmp</td><td>int </td><td>判断回调函数 </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>0： 为冒泡排序，耗费较多资源；1： 系统快排，最快 2： 自写快排 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>排列双向链表函数通过flag的flag，选择合适的排序方法 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">待办事项:</a></b></dt><dd>null </dd></dl>
+
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00266">266</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a127d2524a910989b06852dea39a6c86f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ShowList </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a> *&#160;</td>
+          <td class="paramname"><em>List</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>flag</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>judge</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ShowList <br/>
+遍历双向链表，根据flag选择显示格式，根据judge选择是否输出遍历结果 </p>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+<tr>
+<td>flag </td><td>int </td><td>显示格式flag </td></tr>
+<tr>
+<td>judge </td><td>int </td><td>是否显示flag </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>nodenum </td><td>int </td><td>返回链表长度 </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>遍历双向链表，根据flag选择显示格式，根据judge选择是否输出遍历结果 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000015">待办事项:</a></b></dt><dd>null </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+<tr>
+<td>flag </td><td>int </td><td>显示格式flag </td></tr>
+<tr>
+<td>judge </td><td>int </td><td>是否显示flag </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>nodenum </td><td>int </td><td>返回链表长度 </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>遍历双向链表，根据flag选择显示格式，根据judge选择是否输出遍历结果 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">待办事项:</a></b></dt><dd>null </dd></dl>
+
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00485">485</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="af42f761136d59421fe531e5f53db7d22"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UpdateList </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a> *&#160;</td>
+          <td class="paramname"><em>List</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data_search</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>data_change</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int(*)(const void *, const void *)&#160;</td>
+          <td class="paramname"><em>CallBackCmp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>UpdateList <br/>
+更新双向链表，通过查询原始的节点位置，修改数据 </p>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+<tr>
+<td>*data_search</td><td>void </td><td>需要查询的数据指针 </td></tr>
+<tr>
+<td>*data_change</td><td>void </td><td>需要修改的数据指针 </td></tr>
+<tr>
+<td>*CallBackCmp</td><td>int </td><td>判断回调函数 </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>更新节点操作，一经操作无法返回，慎用！ </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>更新双向链表，通过查询原始的节点位置，修改数据 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000013">待办事项:</a></b></dt><dd>null </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2016-03-11 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>双向链表默认链表接口 </td></tr>
+<tr>
+<td>*data_search</td><td>void </td><td>需要查询的数据指针 </td></tr>
+<tr>
+<td>*data_change</td><td>void </td><td>需要修改的数据指针 </td></tr>
+<tr>
+<td>*CallBackCmp</td><td>int </td><td>判断回调函数 </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>更新节点操作，一经操作无法返回，慎用！ </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>更新双向链表，通过查询原始的节点位置，修改数据 </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000005">待办事项:</a></b></dt><dd>null </dd></dl>
+
+<p>在文件 <a class="el" href="_double_link_8c_source.html">DoubleLink.c</a> 第 <a class="el" href="_double_link_8c_source.html#l00397">397</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="_double_link_8h.html">DoubleLink.h</a></li>
+    <li class="footer">制作者
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>DoubleLink——Shell命令之ls初步模拟: globalArgs_t结构体 参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="favicon.ico"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">DoubleLink——Shell命令之ls初步模拟
+   &#160;<span id="projectnumber">v1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="pages.html"><span>相关页面</span></a></li>
+      <li class="current"><a href="annotated.html"><span>结构体</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>结构体</span></a></li>
+      <li><a href="classes.html"><span>结构体索引</span></a></li>
+      <li><a href="functions.html"><span>成员变量</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('structglobal_args__t.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>结构体</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>类型定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>页</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-attribs">成员变量</a>  </div>
+  <div class="headertitle">
+<div class="title">globalArgs_t结构体 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>定义默认信息的结构体  
+ <a href="structglobal_args__t.html#details">更多...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+成员变量</h2></td></tr>
+<tr class="memitem:a6f50c85874ef8f3405625e5a26febbcb"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#a6f50c85874ef8f3405625e5a26febbcb">path</a> [1024]</td></tr>
+<tr class="memdesc:a6f50c85874ef8f3405625e5a26febbcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">文件绝对路径  <a href="#a6f50c85874ef8f3405625e5a26febbcb">更多...</a><br/></td></tr>
+<tr class="separator:a6f50c85874ef8f3405625e5a26febbcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad532de65ced2a7f637c0cfa3a6e7e993"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#ad532de65ced2a7f637c0cfa3a6e7e993">iflag</a></td></tr>
+<tr class="memdesc:ad532de65ced2a7f637c0cfa3a6e7e993"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否的flag  <a href="#ad532de65ced2a7f637c0cfa3a6e7e993">更多...</a><br/></td></tr>
+<tr class="separator:ad532de65ced2a7f637c0cfa3a6e7e993"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbb9b1dda8ad9915e753c7a84be13489"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#afbb9b1dda8ad9915e753c7a84be13489">cflag</a></td></tr>
+<tr class="memdesc:afbb9b1dda8ad9915e753c7a84be13489"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否采用修改时间排序的flag  <a href="#afbb9b1dda8ad9915e753c7a84be13489">更多...</a><br/></td></tr>
+<tr class="separator:afbb9b1dda8ad9915e753c7a84be13489"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2586d61cfd83f6d8ee1777eb20b54b0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#ae2586d61cfd83f6d8ee1777eb20b54b0">kflag</a></td></tr>
+<tr class="memdesc:ae2586d61cfd83f6d8ee1777eb20b54b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否采用字节排序结果的flag  <a href="#ae2586d61cfd83f6d8ee1777eb20b54b0">更多...</a><br/></td></tr>
+<tr class="separator:ae2586d61cfd83f6d8ee1777eb20b54b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3fe9f9160e69ccb1c2ec2762072a6a4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#ab3fe9f9160e69ccb1c2ec2762072a6a4">tflag</a></td></tr>
+<tr class="memdesc:ab3fe9f9160e69ccb1c2ec2762072a6a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否显示最终结果的flag  <a href="#ab3fe9f9160e69ccb1c2ec2762072a6a4">更多...</a><br/></td></tr>
+<tr class="separator:ab3fe9f9160e69ccb1c2ec2762072a6a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa52c9d76427dab785a267dfb2c0242b1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#aa52c9d76427dab785a267dfb2c0242b1">mflag</a></td></tr>
+<tr class="memdesc:aa52c9d76427dab785a267dfb2c0242b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否横向输出的flag  <a href="#aa52c9d76427dab785a267dfb2c0242b1">更多...</a><br/></td></tr>
+<tr class="separator:aa52c9d76427dab785a267dfb2c0242b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cc7e6867b564ffab9f569351d574a67"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#a4cc7e6867b564ffab9f569351d574a67">lflag</a></td></tr>
+<tr class="memdesc:a4cc7e6867b564ffab9f569351d574a67"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否长格式显示文件的flag  <a href="#a4cc7e6867b564ffab9f569351d574a67">更多...</a><br/></td></tr>
+<tr class="separator:a4cc7e6867b564ffab9f569351d574a67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b2a56cd9a79cbfd3f2bce4e463d9245"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#a7b2a56cd9a79cbfd3f2bce4e463d9245">aflag</a></td></tr>
+<tr class="memdesc:a7b2a56cd9a79cbfd3f2bce4e463d9245"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否显示隐藏文件的flag  <a href="#a7b2a56cd9a79cbfd3f2bce4e463d9245">更多...</a><br/></td></tr>
+<tr class="separator:a7b2a56cd9a79cbfd3f2bce4e463d9245"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bf178baaa87d9153b6ef764640fe960"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#a3bf178baaa87d9153b6ef764640fe960">pflag</a></td></tr>
+<tr class="memdesc:a3bf178baaa87d9153b6ef764640fe960"><td class="mdescLeft">&#160;</td><td class="mdescRight">文件个数标量  <a href="#a3bf178baaa87d9153b6ef764640fe960">更多...</a><br/></td></tr>
+<tr class="separator:a3bf178baaa87d9153b6ef764640fe960"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add78a9ef7e3c17ea829b2bd642cb54be"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#add78a9ef7e3c17ea829b2bd642cb54be">pnflag</a></td></tr>
+<tr class="memdesc:add78a9ef7e3c17ea829b2bd642cb54be"><td class="mdescLeft">&#160;</td><td class="mdescRight">文件个数标量  <a href="#add78a9ef7e3c17ea829b2bd642cb54be">更多...</a><br/></td></tr>
+<tr class="separator:add78a9ef7e3c17ea829b2bd642cb54be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a493e07ea63caf467c6817876a2e8a4ea"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#a493e07ea63caf467c6817876a2e8a4ea">plflag</a></td></tr>
+<tr class="memdesc:a493e07ea63caf467c6817876a2e8a4ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">字符长度标量  <a href="#a493e07ea63caf467c6817876a2e8a4ea">更多...</a><br/></td></tr>
+<tr class="separator:a493e07ea63caf467c6817876a2e8a4ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96885a7ac3fa5bab18fe2f82df3bc938"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html#a96885a7ac3fa5bab18fe2f82df3bc938">pzlflag</a></td></tr>
+<tr class="memdesc:a96885a7ac3fa5bab18fe2f82df3bc938"><td class="mdescLeft">&#160;</td><td class="mdescRight">字符长度标量  <a href="#a96885a7ac3fa5bab18fe2f82df3bc938">更多...</a><br/></td></tr>
+<tr class="separator:a96885a7ac3fa5bab18fe2f82df3bc938"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>定义默认信息的结构体 </p>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00027">27</a> 行定义.</p>
+</div><h2 class="groupheader">结构体成员变量说明</h2>
+<a class="anchor" id="a7b2a56cd9a79cbfd3f2bce4e463d9245"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int aflag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>是否显示隐藏文件的flag </p>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00035">35</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="afbb9b1dda8ad9915e753c7a84be13489"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cflag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>是否采用修改时间排序的flag </p>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00030">30</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad532de65ced2a7f637c0cfa3a6e7e993"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int iflag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>是否的flag </p>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00029">29</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae2586d61cfd83f6d8ee1777eb20b54b0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int kflag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>是否采用字节排序结果的flag </p>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00031">31</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4cc7e6867b564ffab9f569351d574a67"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int lflag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>是否长格式显示文件的flag </p>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00034">34</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa52c9d76427dab785a267dfb2c0242b1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mflag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>是否横向输出的flag </p>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00033">33</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6f50c85874ef8f3405625e5a26febbcb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char path[1024]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>文件绝对路径 </p>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00028">28</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3bf178baaa87d9153b6ef764640fe960"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pflag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>文件个数标量 </p>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00036">36</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a493e07ea63caf467c6817876a2e8a4ea"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int plflag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>字符长度标量 </p>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00038">38</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="add78a9ef7e3c17ea829b2bd642cb54be"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pnflag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>文件个数标量 </p>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00037">37</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a96885a7ac3fa5bab18fe2f82df3bc938"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int pzlflag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>字符长度标量 </p>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00039">39</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab3fe9f9160e69ccb1c2ec2762072a6a4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tflag</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>是否显示最终结果的flag </p>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00032">32</a> 行定义.</p>
+
+</div>
+</div>
+<hr/>该结构体的文档由以下文件生成:<ul>
+<li><a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="structglobal_args__t.html">globalArgs_t</a></li>
+    <li class="footer">制作者
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

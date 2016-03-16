@@ -1,0 +1,811 @@
+\hypertarget{_ls_double_link_8c}{\section{Ls\-Double\-Link.\-c 文件参考}
+\label{_ls_double_link_8c}\index{Ls\-Double\-Link.\-c@{Ls\-Double\-Link.\-c}}
+}
+
+
+通用双向链表测试程序——shell命令ls的基本实现 \par
+使用\-Double\-Link.\-h这个sugarguo编写的通用双向链表的头文件接口，进行双向链表的操作测试。  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include $<$sys/stat.\-h$>$}\\*
+{\ttfamily \#include $<$grp.\-h$>$}\\*
+{\ttfamily \#include $<$pwd.\-h$>$}\\*
+{\ttfamily \#include $<$time.\-h$>$}\\*
+{\ttfamily \#include $<$sys/types.\-h$>$}\\*
+{\ttfamily \#include $<$dirent.\-h$>$}\\*
+{\ttfamily \#include $<$errno.\-h$>$}\\*
+{\ttfamily \#include $<$sys/ioctl.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}Double\-Link.\-h\char`\"{}}\\*
+\subsection*{结构体}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structglobal_args__t}{global\-Args\-\_\-t}
+\begin{DoxyCompactList}\small\item\em 定义默认信息的结构体 \end{DoxyCompactList}\item 
+struct \hyperlink{struct_file_info}{File\-Info}
+\begin{DoxyCompactList}\small\item\em 定义默认文件信息的结构体 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{函数}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_ls_double_link_8c_a0be317f6735aa68f2ec6a1703f3e028d}{Call\-Back\-Cmp\-Filename} (const void $\ast$one, const void $\ast$two)
+\begin{DoxyCompactList}\small\item\em Call\-Back\-Cmp\-Char \par
+回调函数，比较内容是否相同，比较内容为文件信息结构体中的文件名 \end{DoxyCompactList}\item 
+int \hyperlink{_ls_double_link_8c_a6f7941b8531ceb907228efb72f7d3ae8}{Call\-Back\-Cmp\-Filename\-Long} (const void $\ast$one, const void $\ast$two)
+\begin{DoxyCompactList}\small\item\em Call\-Back\-Cmp\-Char \par
+回调函数，比较内容是否相同，比较内容为文件信息结构体中的文件名长短 \end{DoxyCompactList}\item 
+int \hyperlink{_ls_double_link_8c_a32c1f7dc3877f4562dd467d3c0c46d1b}{Call\-Back\-Cmp\-Time} (const void $\ast$one, const void $\ast$two)
+\begin{DoxyCompactList}\small\item\em Call\-Back\-Cmp\-Char \par
+回调函数，比较内容是否相同，比较内容为文件信息结构体中的时间 \end{DoxyCompactList}\item 
+int \hyperlink{_ls_double_link_8c_addc5a2a4a20b168cadacc8924eb72cf7}{Call\-Back\-Cmp\-Bytes} (const void $\ast$one, const void $\ast$two)
+\begin{DoxyCompactList}\small\item\em Call\-Back\-Cmp\-Char \par
+回调函数，比较内容是否相同，比较内容为文件信息结构体中的字节数 \end{DoxyCompactList}\item 
+void \hyperlink{_ls_double_link_8c_aec0289cf14224c551286d03baba06346}{Call\-Back\-Show\-File\-Info\-\_\-a} (const void $\ast$datashow)
+\begin{DoxyCompactList}\small\item\em Call\-Back\-Show\-File\-Info\-\_\-a \par
+显示隐藏文件 \end{DoxyCompactList}\item 
+void \hyperlink{_ls_double_link_8c_a8775c4ae4595df3010161a2aa793c9a3}{Call\-Back\-Show\-File\-Info} (const void $\ast$datashow)
+\begin{DoxyCompactList}\small\item\em Call\-Back\-Show\-File\-Info \par
+不显示隐藏文件 \end{DoxyCompactList}\item 
+void \hyperlink{_ls_double_link_8c_ad98419f273ee1e8b2be132eecc9af3c5}{Call\-Back\-Show\-File\-Info\-Long} (const void $\ast$datashow)
+\begin{DoxyCompactList}\small\item\em Call\-Back\-Show\-File\-Info\-Long \par
+长格式显示文件信息 \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{_ls_double_link_8c_a56cfb46b8170954391fc7af903c93563}{From\-Uid\-To\-User\-Name} (uid\-\_\-t uid, char username\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em From\-Uid\-To\-User\-Name \par
+通过getgrgid函数，读取文件所属组 \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{_ls_double_link_8c_a614c3a2e9dc58194a2dc9841e1c06990}{From\-Gid\-To\-G\-Name} (gid\-\_\-t gid, char groupname\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em From\-Gid\-To\-G\-Name \par
+通过getgrgid函数，读取文件所属组 \end{DoxyCompactList}\item 
+int \hyperlink{_ls_double_link_8c_ab9c85e9cc6acbd2a09142623712ff935}{Back\-Mode\-Competence} (mode\-\_\-t st\-\_\-mode)
+\begin{DoxyCompactList}\small\item\em Back\-Mode\-Competence \par
+通过st\-\_\-mode与\-S\-\_\-\-I\-F$\ast$ 想与，然后与\-S\-\_\-\-I\-F$\ast$ 判断，如果是则存在此权限，与下方不同，此为传出数字权限 \end{DoxyCompactList}\item 
+int \hyperlink{_ls_double_link_8c_ae30b060a26d7c4780785d1d10e9f42cd}{Back\-Mode} (mode\-\_\-t st\-\_\-mode, char mode\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Back\-Mode \par
+通过st\-\_\-mode与\-S\-\_\-\-I\-F$\ast$ 想与，然后与\-S\-\_\-\-I\-F$\ast$ 判断，如果是则存在此权限 \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{_ls_double_link_8c_aa76693a3d437d10004316ca42535029f}{Back\-All\-Time} (time\-\_\-t time, char timeback\mbox{[}$\,$\mbox{]})
+\item 
+\hyperlink{_double_link_8c_a9fcabae42ec5545a4c8f778a68a4e578}{D\-L\-Node} $\ast$ \hyperlink{_ls_double_link_8c_aa1cb569eca37dddcc8e03c9a268644cf}{Get\-Double\-Link} (char path\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Get\-Double\-Link \par
+读取文件名以及各种信息，创建结构体插入到双向链表 \end{DoxyCompactList}\item 
+void \hyperlink{_ls_double_link_8c_acf5088e61b616f77674f62a9ba3b86b7}{display\-\_\-usage} (void)
+\begin{DoxyCompactList}\small\item\em display\-\_\-usage \par
+词频统计测试文件通过getopt函数的错误回显 \end{DoxyCompactList}\item 
+void \hyperlink{_ls_double_link_8c_a97dc5d244dcdb842fab654a276322639}{convert\-\_\-document} (void)
+\begin{DoxyCompactList}\small\item\em convert\-\_\-document \par
+shell 中 仿ls命令测试文件通过getopt函数的配置函数，并通过flag选择合适方式输出 \end{DoxyCompactList}\item 
+int \hyperlink{_ls_double_link_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em main \par
+通过getopt，实现程序通过参数进行运行目的 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{变量}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structglobal_args__t}{global\-Args\-\_\-t} \hyperlink{_ls_double_link_8c_a6240b2c6874900a3e7b9257fb8ac4c14}{global\-Args}
+\item 
+struct winsize \hyperlink{_ls_double_link_8c_a44789f54fc2524bad82f014f421cb4a4}{size}
+\end{DoxyCompactItemize}
+
+
+\subsection{详细描述}
+通用双向链表测试程序——shell命令ls的基本实现 \par
+使用\-Double\-Link.\-h这个sugarguo编写的通用双向链表的头文件接口，进行双向链表的操作测试。 \begin{DoxyAuthor}{作者}
+Sugarguo  \href{mailto:sugarguo@live.com}{\tt sugarguo@live.\-com} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{日期}
+2016/03/15 20\-:00 
+\end{DoxyDate}
+\begin{DoxyVersion}{版本}
+v1.\-0.\-0 
+\end{DoxyVersion}
+\begin{DoxyCopyright}{版权所有}
+Embed\-Way 恒为科技武汉研发中心 By\-:Sugarguo 
+\end{DoxyCopyright}
+
+
+在文件 \hyperlink{_ls_double_link_8c_source}{Ls\-Double\-Link.\-c} 中定义.
+
+
+
+\subsection{函数说明}
+\hypertarget{_ls_double_link_8c_aa76693a3d437d10004316ca42535029f}{\index{Ls\-Double\-Link.\-c@{Ls\-Double\-Link.\-c}!Back\-All\-Time@{Back\-All\-Time}}
+\index{Back\-All\-Time@{Back\-All\-Time}!LsDoubleLink.c@{Ls\-Double\-Link.\-c}}
+\subsubsection[{Back\-All\-Time}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ Back\-All\-Time (
+\begin{DoxyParamCaption}
+\item[{time\-\_\-t}]{time, }
+\item[{char}]{timeback\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_ls_double_link_8c_aa76693a3d437d10004316ca42535029f}
+
+
+在文件 Ls\-Double\-Link.\-c 第 505 行定义.
+
+\hypertarget{_ls_double_link_8c_ae30b060a26d7c4780785d1d10e9f42cd}{\index{Ls\-Double\-Link.\-c@{Ls\-Double\-Link.\-c}!Back\-Mode@{Back\-Mode}}
+\index{Back\-Mode@{Back\-Mode}!LsDoubleLink.c@{Ls\-Double\-Link.\-c}}
+\subsubsection[{Back\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}int Back\-Mode (
+\begin{DoxyParamCaption}
+\item[{mode\-\_\-t}]{st\-\_\-mode, }
+\item[{char}]{mode\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_ls_double_link_8c_ae30b060a26d7c4780785d1d10e9f42cd}
+
+
+Back\-Mode \par
+通过st\-\_\-mode与\-S\-\_\-\-I\-F$\ast$ 想与，然后与\-S\-\_\-\-I\-F$\ast$ 判断，如果是则存在此权限 
+
+\begin{DoxyDate}{日期}
+2016-\/03-\/16 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+st\-\_\-mode &mode\-\_\-t &传入的文件权限 \\\cline{1-3}
+mode\mbox{[}\mbox{]} &char &文件权限的保存数组 \\\cline{1-3}
+\end{TabularC}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+0 &int &判断是否为目录 \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+null 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000023}{待办事项}]null \end{DoxyRefDesc}
+
+
+在文件 Ls\-Double\-Link.\-c 第 457 行定义.
+
+\hypertarget{_ls_double_link_8c_ab9c85e9cc6acbd2a09142623712ff935}{\index{Ls\-Double\-Link.\-c@{Ls\-Double\-Link.\-c}!Back\-Mode\-Competence@{Back\-Mode\-Competence}}
+\index{Back\-Mode\-Competence@{Back\-Mode\-Competence}!LsDoubleLink.c@{Ls\-Double\-Link.\-c}}
+\subsubsection[{Back\-Mode\-Competence}]{\setlength{\rightskip}{0pt plus 5cm}int Back\-Mode\-Competence (
+\begin{DoxyParamCaption}
+\item[{mode\-\_\-t}]{st\-\_\-mode}
+\end{DoxyParamCaption}
+)}}\label{_ls_double_link_8c_ab9c85e9cc6acbd2a09142623712ff935}
+
+
+Back\-Mode\-Competence \par
+通过st\-\_\-mode与\-S\-\_\-\-I\-F$\ast$ 想与，然后与\-S\-\_\-\-I\-F$\ast$ 判断，如果是则存在此权限，与下方不同，此为传出数字权限 
+
+\begin{DoxyDate}{日期}
+2016-\/03-\/16 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+st\-\_\-mode &mode\-\_\-t &传入的文件权限 \\\cline{1-3}
+\end{TabularC}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+0 &int &传出值为777 类型的权限 \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+null 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000022}{待办事项}]null \end{DoxyRefDesc}
+
+
+在文件 Ls\-Double\-Link.\-c 第 404 行定义.
+
+\hypertarget{_ls_double_link_8c_addc5a2a4a20b168cadacc8924eb72cf7}{\index{Ls\-Double\-Link.\-c@{Ls\-Double\-Link.\-c}!Call\-Back\-Cmp\-Bytes@{Call\-Back\-Cmp\-Bytes}}
+\index{Call\-Back\-Cmp\-Bytes@{Call\-Back\-Cmp\-Bytes}!LsDoubleLink.c@{Ls\-Double\-Link.\-c}}
+\subsubsection[{Call\-Back\-Cmp\-Bytes}]{\setlength{\rightskip}{0pt plus 5cm}int Call\-Back\-Cmp\-Bytes (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{one, }
+\item[{const void $\ast$}]{two}
+\end{DoxyParamCaption}
+)}}\label{_ls_double_link_8c_addc5a2a4a20b168cadacc8924eb72cf7}
+
+
+Call\-Back\-Cmp\-Char \par
+回调函数，比较内容是否相同，比较内容为文件信息结构体中的字节数 
+
+
+\begin{DoxyParams}[1]{参数}
+\mbox{\tt in}  & {\em $\ast$one} & 比较的第一个内容 \\
+\hline
+\mbox{\tt in}  & {\em $\ast$two} & 比较的第二个内容 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值为两个字母比较结果 
+\end{DoxyReturn}
+
+
+在文件 Ls\-Double\-Link.\-c 第 105 行定义.
+
+\hypertarget{_ls_double_link_8c_a0be317f6735aa68f2ec6a1703f3e028d}{\index{Ls\-Double\-Link.\-c@{Ls\-Double\-Link.\-c}!Call\-Back\-Cmp\-Filename@{Call\-Back\-Cmp\-Filename}}
+\index{Call\-Back\-Cmp\-Filename@{Call\-Back\-Cmp\-Filename}!LsDoubleLink.c@{Ls\-Double\-Link.\-c}}
+\subsubsection[{Call\-Back\-Cmp\-Filename}]{\setlength{\rightskip}{0pt plus 5cm}int Call\-Back\-Cmp\-Filename (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{one, }
+\item[{const void $\ast$}]{two}
+\end{DoxyParamCaption}
+)}}\label{_ls_double_link_8c_a0be317f6735aa68f2ec6a1703f3e028d}
+
+
+Call\-Back\-Cmp\-Char \par
+回调函数，比较内容是否相同，比较内容为文件信息结构体中的文件名 
+
+
+\begin{DoxyParams}[1]{参数}
+\mbox{\tt in}  & {\em $\ast$one} & 比较的第一个内容 \\
+\hline
+\mbox{\tt in}  & {\em $\ast$two} & 比较的第二个内容 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值为两个字母比较结果 
+\end{DoxyReturn}
+
+
+在文件 Ls\-Double\-Link.\-c 第 68 行定义.
+
+\hypertarget{_ls_double_link_8c_a6f7941b8531ceb907228efb72f7d3ae8}{\index{Ls\-Double\-Link.\-c@{Ls\-Double\-Link.\-c}!Call\-Back\-Cmp\-Filename\-Long@{Call\-Back\-Cmp\-Filename\-Long}}
+\index{Call\-Back\-Cmp\-Filename\-Long@{Call\-Back\-Cmp\-Filename\-Long}!LsDoubleLink.c@{Ls\-Double\-Link.\-c}}
+\subsubsection[{Call\-Back\-Cmp\-Filename\-Long}]{\setlength{\rightskip}{0pt plus 5cm}int Call\-Back\-Cmp\-Filename\-Long (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{one, }
+\item[{const void $\ast$}]{two}
+\end{DoxyParamCaption}
+)}}\label{_ls_double_link_8c_a6f7941b8531ceb907228efb72f7d3ae8}
+
+
+Call\-Back\-Cmp\-Char \par
+回调函数，比较内容是否相同，比较内容为文件信息结构体中的文件名长短 
+
+
+\begin{DoxyParams}[1]{参数}
+\mbox{\tt in}  & {\em $\ast$one} & 比较的第一个内容 \\
+\hline
+\mbox{\tt in}  & {\em $\ast$two} & 比较的第二个内容 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值为两个字母比较结果 
+\end{DoxyReturn}
+
+
+在文件 Ls\-Double\-Link.\-c 第 80 行定义.
+
+\hypertarget{_ls_double_link_8c_a32c1f7dc3877f4562dd467d3c0c46d1b}{\index{Ls\-Double\-Link.\-c@{Ls\-Double\-Link.\-c}!Call\-Back\-Cmp\-Time@{Call\-Back\-Cmp\-Time}}
+\index{Call\-Back\-Cmp\-Time@{Call\-Back\-Cmp\-Time}!LsDoubleLink.c@{Ls\-Double\-Link.\-c}}
+\subsubsection[{Call\-Back\-Cmp\-Time}]{\setlength{\rightskip}{0pt plus 5cm}int Call\-Back\-Cmp\-Time (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{one, }
+\item[{const void $\ast$}]{two}
+\end{DoxyParamCaption}
+)}}\label{_ls_double_link_8c_a32c1f7dc3877f4562dd467d3c0c46d1b}
+
+
+Call\-Back\-Cmp\-Char \par
+回调函数，比较内容是否相同，比较内容为文件信息结构体中的时间 
+
+
+\begin{DoxyParams}[1]{参数}
+\mbox{\tt in}  & {\em $\ast$one} & 比较的第一个内容 \\
+\hline
+\mbox{\tt in}  & {\em $\ast$two} & 比较的第二个内容 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值为两个字母比较结果 
+\end{DoxyReturn}
+
+
+在文件 Ls\-Double\-Link.\-c 第 92 行定义.
+
+\hypertarget{_ls_double_link_8c_a8775c4ae4595df3010161a2aa793c9a3}{\index{Ls\-Double\-Link.\-c@{Ls\-Double\-Link.\-c}!Call\-Back\-Show\-File\-Info@{Call\-Back\-Show\-File\-Info}}
+\index{Call\-Back\-Show\-File\-Info@{Call\-Back\-Show\-File\-Info}!LsDoubleLink.c@{Ls\-Double\-Link.\-c}}
+\subsubsection[{Call\-Back\-Show\-File\-Info}]{\setlength{\rightskip}{0pt plus 5cm}void Call\-Back\-Show\-File\-Info (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{datashow}
+\end{DoxyParamCaption}
+)}}\label{_ls_double_link_8c_a8775c4ae4595df3010161a2aa793c9a3}
+
+
+Call\-Back\-Show\-File\-Info \par
+不显示隐藏文件 
+
+\begin{DoxyDate}{日期}
+2016-\/03-\/16 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+$\ast$datashow &void &传入的文件信息 \\\cline{1-3}
+\end{TabularC}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+null 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000018}{待办事项}]null \end{DoxyRefDesc}
+
+
+在文件 Ls\-Double\-Link.\-c 第 200 行定义.
+
+\hypertarget{_ls_double_link_8c_aec0289cf14224c551286d03baba06346}{\index{Ls\-Double\-Link.\-c@{Ls\-Double\-Link.\-c}!Call\-Back\-Show\-File\-Info\-\_\-a@{Call\-Back\-Show\-File\-Info\-\_\-a}}
+\index{Call\-Back\-Show\-File\-Info\-\_\-a@{Call\-Back\-Show\-File\-Info\-\_\-a}!LsDoubleLink.c@{Ls\-Double\-Link.\-c}}
+\subsubsection[{Call\-Back\-Show\-File\-Info\-\_\-a}]{\setlength{\rightskip}{0pt plus 5cm}void Call\-Back\-Show\-File\-Info\-\_\-a (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{datashow}
+\end{DoxyParamCaption}
+)}}\label{_ls_double_link_8c_aec0289cf14224c551286d03baba06346}
+
+
+Call\-Back\-Show\-File\-Info\-\_\-a \par
+显示隐藏文件 
+
+\begin{DoxyDate}{日期}
+2016-\/03-\/16 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+$\ast$datashow &void &传入的文件信息 \\\cline{1-3}
+\end{TabularC}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+null 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000017}{待办事项}]null \end{DoxyRefDesc}
+
+
+在文件 Ls\-Double\-Link.\-c 第 130 行定义.
+
+\hypertarget{_ls_double_link_8c_ad98419f273ee1e8b2be132eecc9af3c5}{\index{Ls\-Double\-Link.\-c@{Ls\-Double\-Link.\-c}!Call\-Back\-Show\-File\-Info\-Long@{Call\-Back\-Show\-File\-Info\-Long}}
+\index{Call\-Back\-Show\-File\-Info\-Long@{Call\-Back\-Show\-File\-Info\-Long}!LsDoubleLink.c@{Ls\-Double\-Link.\-c}}
+\subsubsection[{Call\-Back\-Show\-File\-Info\-Long}]{\setlength{\rightskip}{0pt plus 5cm}void Call\-Back\-Show\-File\-Info\-Long (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{datashow}
+\end{DoxyParamCaption}
+)}}\label{_ls_double_link_8c_ad98419f273ee1e8b2be132eecc9af3c5}
+
+
+Call\-Back\-Show\-File\-Info\-Long \par
+长格式显示文件信息 
+
+\begin{DoxyDate}{日期}
+2016-\/03-\/16 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+$\ast$datashow &void &传入的文件信息 \\\cline{1-3}
+\end{TabularC}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+null 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000019}{待办事项}]null \end{DoxyRefDesc}
+
+
+在文件 Ls\-Double\-Link.\-c 第 272 行定义.
+
+\hypertarget{_ls_double_link_8c_a97dc5d244dcdb842fab654a276322639}{\index{Ls\-Double\-Link.\-c@{Ls\-Double\-Link.\-c}!convert\-\_\-document@{convert\-\_\-document}}
+\index{convert\-\_\-document@{convert\-\_\-document}!LsDoubleLink.c@{Ls\-Double\-Link.\-c}}
+\subsubsection[{convert\-\_\-document}]{\setlength{\rightskip}{0pt plus 5cm}void convert\-\_\-document (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_ls_double_link_8c_a97dc5d244dcdb842fab654a276322639}
+
+
+convert\-\_\-document \par
+shell 中 仿ls命令测试文件通过getopt函数的配置函数，并通过flag选择合适方式输出 
+
+\begin{DoxyDate}{日期}
+2016-\/03-\/16 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+null 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000026}{待办事项}]null \end{DoxyRefDesc}
+
+
+在文件 Ls\-Double\-Link.\-c 第 624 行定义.
+
+\hypertarget{_ls_double_link_8c_acf5088e61b616f77674f62a9ba3b86b7}{\index{Ls\-Double\-Link.\-c@{Ls\-Double\-Link.\-c}!display\-\_\-usage@{display\-\_\-usage}}
+\index{display\-\_\-usage@{display\-\_\-usage}!LsDoubleLink.c@{Ls\-Double\-Link.\-c}}
+\subsubsection[{display\-\_\-usage}]{\setlength{\rightskip}{0pt plus 5cm}void display\-\_\-usage (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{_ls_double_link_8c_acf5088e61b616f77674f62a9ba3b86b7}
+
+
+display\-\_\-usage \par
+词频统计测试文件通过getopt函数的错误回显 
+
+\begin{DoxyDate}{日期}
+2016-\/03-\/16 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &null &null \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+null 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000025}{待办事项}]null \end{DoxyRefDesc}
+
+
+在文件 Ls\-Double\-Link.\-c 第 600 行定义.
+
+\hypertarget{_ls_double_link_8c_a614c3a2e9dc58194a2dc9841e1c06990}{\index{Ls\-Double\-Link.\-c@{Ls\-Double\-Link.\-c}!From\-Gid\-To\-G\-Name@{From\-Gid\-To\-G\-Name}}
+\index{From\-Gid\-To\-G\-Name@{From\-Gid\-To\-G\-Name}!LsDoubleLink.c@{Ls\-Double\-Link.\-c}}
+\subsubsection[{From\-Gid\-To\-G\-Name}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ From\-Gid\-To\-G\-Name (
+\begin{DoxyParamCaption}
+\item[{gid\-\_\-t}]{gid, }
+\item[{char}]{groupname\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_ls_double_link_8c_a614c3a2e9dc58194a2dc9841e1c06990}
+
+
+From\-Gid\-To\-G\-Name \par
+通过getgrgid函数，读取文件所属组 
+
+\begin{DoxyDate}{日期}
+2016-\/03-\/16 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+gid &gid\-\_\-t &传入的文件权限 \\\cline{1-3}
+groupname\mbox{[}\mbox{]} &char &文件属于的组 \\\cline{1-3}
+\end{TabularC}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+groupname\mbox{[}\mbox{]} &char &文件属于的组 \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+null 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000021}{待办事项}]null \end{DoxyRefDesc}
+
+
+在文件 Ls\-Double\-Link.\-c 第 372 行定义.
+
+\hypertarget{_ls_double_link_8c_a56cfb46b8170954391fc7af903c93563}{\index{Ls\-Double\-Link.\-c@{Ls\-Double\-Link.\-c}!From\-Uid\-To\-User\-Name@{From\-Uid\-To\-User\-Name}}
+\index{From\-Uid\-To\-User\-Name@{From\-Uid\-To\-User\-Name}!LsDoubleLink.c@{Ls\-Double\-Link.\-c}}
+\subsubsection[{From\-Uid\-To\-User\-Name}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ From\-Uid\-To\-User\-Name (
+\begin{DoxyParamCaption}
+\item[{uid\-\_\-t}]{uid, }
+\item[{char}]{username\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_ls_double_link_8c_a56cfb46b8170954391fc7af903c93563}
+
+
+From\-Uid\-To\-User\-Name \par
+通过getgrgid函数，读取文件所属组 
+
+\begin{DoxyDate}{日期}
+2016-\/03-\/16 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+uid &uid\-\_\-t &传入的文件权限 \\\cline{1-3}
+groupname\mbox{[}\mbox{]} &char &文件属于的用户名 \\\cline{1-3}
+\end{TabularC}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+username\mbox{[}\mbox{]}&char &文件属于的用户 \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+null 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000020}{待办事项}]null \end{DoxyRefDesc}
+
+
+在文件 Ls\-Double\-Link.\-c 第 339 行定义.
+
+\hypertarget{_ls_double_link_8c_aa1cb569eca37dddcc8e03c9a268644cf}{\index{Ls\-Double\-Link.\-c@{Ls\-Double\-Link.\-c}!Get\-Double\-Link@{Get\-Double\-Link}}
+\index{Get\-Double\-Link@{Get\-Double\-Link}!LsDoubleLink.c@{Ls\-Double\-Link.\-c}}
+\subsubsection[{Get\-Double\-Link}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-L\-Node}$\ast$ Get\-Double\-Link (
+\begin{DoxyParamCaption}
+\item[{char}]{path\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{_ls_double_link_8c_aa1cb569eca37dddcc8e03c9a268644cf}
+
+
+Get\-Double\-Link \par
+读取文件名以及各种信息，创建结构体插入到双向链表 
+
+\begin{DoxyDate}{日期}
+2016-\/03-\/16 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+path\mbox{[}\mbox{]} &char &文件目录绝对路径（支持. ..） \\\cline{1-3}
+\end{TabularC}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+$\ast$\-List &D\-L\-Node &返回的\-List指针 \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+null 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000024}{待办事项}]null \end{DoxyRefDesc}
+
+
+在文件 Ls\-Double\-Link.\-c 第 531 行定义.
+
+\hypertarget{_ls_double_link_8c_a3c04138a5bfe5d72780bb7e82a18e627}{\index{Ls\-Double\-Link.\-c@{Ls\-Double\-Link.\-c}!main@{main}}
+\index{main@{main}!LsDoubleLink.c@{Ls\-Double\-Link.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{_ls_double_link_8c_a3c04138a5bfe5d72780bb7e82a18e627}
+
+
+main \par
+通过getopt，实现程序通过参数进行运行目的 
+
+\begin{DoxyDate}{日期}
+2016-\/03-\/16 
+\end{DoxyDate}
+\begin{DoxyAuthor}{作者}
+Sugarguo 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{参数}
+{\em } & 参数说明如下表： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of param  }\\\cline{1-3}
+argc &int &参数个数 \\\cline{1-3}
+$\ast$$\ast$argv &char &参数保存 \\\cline{1-3}
+\end{TabularC}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{返回}
+返回值说明如下： \begin{TabularC}{3}
+\hline
+\rowcolor{lightgray}{\bf name }&{\bf type }&{\bf description of value  }\\\cline{1-3}
+null &int &E\-X\-I\-T\-\_\-\-S\-U\-C\-C\-E\-S\-S \\\cline{1-3}
+\end{TabularC}
+
+\end{DoxyReturn}
+\begin{DoxyWarning}{警告}
+null 
+\end{DoxyWarning}
+\begin{DoxyAttention}{注意}
+null 
+\end{DoxyAttention}
+\begin{DoxyNote}{注解}
+null 
+\end{DoxyNote}
+\begin{DoxyRefDesc}{待办事项}
+\item[\hyperlink{todo__todo000027}{待办事项}]null \end{DoxyRefDesc}
+
+
+在文件 Ls\-Double\-Link.\-c 第 697 行定义.
+
+
+
+\subsection{变量说明}
+\hypertarget{_ls_double_link_8c_a6240b2c6874900a3e7b9257fb8ac4c14}{\index{Ls\-Double\-Link.\-c@{Ls\-Double\-Link.\-c}!global\-Args@{global\-Args}}
+\index{global\-Args@{global\-Args}!LsDoubleLink.c@{Ls\-Double\-Link.\-c}}
+\subsubsection[{global\-Args}]{\setlength{\rightskip}{0pt plus 5cm}struct {\bf global\-Args\-\_\-t} global\-Args}}\label{_ls_double_link_8c_a6240b2c6874900a3e7b9257fb8ac4c14}
+\hypertarget{_ls_double_link_8c_a44789f54fc2524bad82f014f421cb4a4}{\index{Ls\-Double\-Link.\-c@{Ls\-Double\-Link.\-c}!size@{size}}
+\index{size@{size}!LsDoubleLink.c@{Ls\-Double\-Link.\-c}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}struct winsize size}}\label{_ls_double_link_8c_a44789f54fc2524bad82f014f421cb4a4}
+
+
+在文件 Ls\-Double\-Link.\-c 第 58 行定义.
+

@@ -1,0 +1,1002 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>DoubleLink——Shell命令之ls初步模拟: LsDoubleLink.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="favicon.ico"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">DoubleLink——Shell命令之ls初步模拟
+   &#160;<span id="projectnumber">v1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li><a href="pages.html"><span>相关页面</span></a></li>
+      <li><a href="annotated.html"><span>结构体</span></a></li>
+      <li class="current"><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>文件列表</span></a></li>
+      <li><a href="globals.html"><span>全局定义</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_ls_double_link_8c.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>结构体</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>类型定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>页</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">结构体</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle">
+<div class="title">LsDoubleLink.c 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>通用双向链表测试程序——shell命令ls的基本实现 <br/>
+使用DoubleLink.h这个sugarguo编写的通用双向链表的头文件接口，进行双向链表的操作测试。  
+<a href="#details">更多...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &lt;stdlib.h&gt;</code><br/>
+<code>#include &lt;string.h&gt;</code><br/>
+<code>#include &lt;unistd.h&gt;</code><br/>
+<code>#include &lt;sys/stat.h&gt;</code><br/>
+<code>#include &lt;grp.h&gt;</code><br/>
+<code>#include &lt;pwd.h&gt;</code><br/>
+<code>#include &lt;time.h&gt;</code><br/>
+<code>#include &lt;sys/types.h&gt;</code><br/>
+<code>#include &lt;dirent.h&gt;</code><br/>
+<code>#include &lt;errno.h&gt;</code><br/>
+<code>#include &lt;sys/ioctl.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="_double_link_8h_source.html">DoubleLink.h</a>&quot;</code><br/>
+</div>
+<p><a href="_ls_double_link_8c_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+结构体</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structglobal_args__t.html">globalArgs_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">定义默认信息的结构体  <a href="structglobal_args__t.html#details">更多...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_file_info.html">FileInfo</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">定义默认文件信息的结构体  <a href="struct_file_info.html#details">更多...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a0be317f6735aa68f2ec6a1703f3e028d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ls_double_link_8c.html#a0be317f6735aa68f2ec6a1703f3e028d">CallBackCmpFilename</a> (const void *one, const void *two)</td></tr>
+<tr class="memdesc:a0be317f6735aa68f2ec6a1703f3e028d"><td class="mdescLeft">&#160;</td><td class="mdescRight">CallBackCmpChar <br/>
+回调函数，比较内容是否相同，比较内容为文件信息结构体中的文件名  <a href="#a0be317f6735aa68f2ec6a1703f3e028d">更多...</a><br/></td></tr>
+<tr class="separator:a0be317f6735aa68f2ec6a1703f3e028d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f7941b8531ceb907228efb72f7d3ae8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ls_double_link_8c.html#a6f7941b8531ceb907228efb72f7d3ae8">CallBackCmpFilenameLong</a> (const void *one, const void *two)</td></tr>
+<tr class="memdesc:a6f7941b8531ceb907228efb72f7d3ae8"><td class="mdescLeft">&#160;</td><td class="mdescRight">CallBackCmpChar <br/>
+回调函数，比较内容是否相同，比较内容为文件信息结构体中的文件名长短  <a href="#a6f7941b8531ceb907228efb72f7d3ae8">更多...</a><br/></td></tr>
+<tr class="separator:a6f7941b8531ceb907228efb72f7d3ae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32c1f7dc3877f4562dd467d3c0c46d1b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ls_double_link_8c.html#a32c1f7dc3877f4562dd467d3c0c46d1b">CallBackCmpTime</a> (const void *one, const void *two)</td></tr>
+<tr class="memdesc:a32c1f7dc3877f4562dd467d3c0c46d1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">CallBackCmpChar <br/>
+回调函数，比较内容是否相同，比较内容为文件信息结构体中的时间  <a href="#a32c1f7dc3877f4562dd467d3c0c46d1b">更多...</a><br/></td></tr>
+<tr class="separator:a32c1f7dc3877f4562dd467d3c0c46d1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addc5a2a4a20b168cadacc8924eb72cf7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ls_double_link_8c.html#addc5a2a4a20b168cadacc8924eb72cf7">CallBackCmpBytes</a> (const void *one, const void *two)</td></tr>
+<tr class="memdesc:addc5a2a4a20b168cadacc8924eb72cf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">CallBackCmpChar <br/>
+回调函数，比较内容是否相同，比较内容为文件信息结构体中的字节数  <a href="#addc5a2a4a20b168cadacc8924eb72cf7">更多...</a><br/></td></tr>
+<tr class="separator:addc5a2a4a20b168cadacc8924eb72cf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec0289cf14224c551286d03baba06346"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ls_double_link_8c.html#aec0289cf14224c551286d03baba06346">CallBackShowFileInfo_a</a> (const void *datashow)</td></tr>
+<tr class="memdesc:aec0289cf14224c551286d03baba06346"><td class="mdescLeft">&#160;</td><td class="mdescRight">CallBackShowFileInfo_a <br/>
+显示隐藏文件  <a href="#aec0289cf14224c551286d03baba06346">更多...</a><br/></td></tr>
+<tr class="separator:aec0289cf14224c551286d03baba06346"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8775c4ae4595df3010161a2aa793c9a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ls_double_link_8c.html#a8775c4ae4595df3010161a2aa793c9a3">CallBackShowFileInfo</a> (const void *datashow)</td></tr>
+<tr class="memdesc:a8775c4ae4595df3010161a2aa793c9a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">CallBackShowFileInfo <br/>
+不显示隐藏文件  <a href="#a8775c4ae4595df3010161a2aa793c9a3">更多...</a><br/></td></tr>
+<tr class="separator:a8775c4ae4595df3010161a2aa793c9a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad98419f273ee1e8b2be132eecc9af3c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ls_double_link_8c.html#ad98419f273ee1e8b2be132eecc9af3c5">CallBackShowFileInfoLong</a> (const void *datashow)</td></tr>
+<tr class="memdesc:ad98419f273ee1e8b2be132eecc9af3c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">CallBackShowFileInfoLong <br/>
+长格式显示文件信息  <a href="#ad98419f273ee1e8b2be132eecc9af3c5">更多...</a><br/></td></tr>
+<tr class="separator:ad98419f273ee1e8b2be132eecc9af3c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56cfb46b8170954391fc7af903c93563"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ls_double_link_8c.html#a56cfb46b8170954391fc7af903c93563">FromUidToUserName</a> (uid_t uid, char username[])</td></tr>
+<tr class="memdesc:a56cfb46b8170954391fc7af903c93563"><td class="mdescLeft">&#160;</td><td class="mdescRight">FromUidToUserName <br/>
+通过getgrgid函数，读取文件所属组  <a href="#a56cfb46b8170954391fc7af903c93563">更多...</a><br/></td></tr>
+<tr class="separator:a56cfb46b8170954391fc7af903c93563"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a614c3a2e9dc58194a2dc9841e1c06990"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ls_double_link_8c.html#a614c3a2e9dc58194a2dc9841e1c06990">FromGidToGName</a> (gid_t gid, char groupname[])</td></tr>
+<tr class="memdesc:a614c3a2e9dc58194a2dc9841e1c06990"><td class="mdescLeft">&#160;</td><td class="mdescRight">FromGidToGName <br/>
+通过getgrgid函数，读取文件所属组  <a href="#a614c3a2e9dc58194a2dc9841e1c06990">更多...</a><br/></td></tr>
+<tr class="separator:a614c3a2e9dc58194a2dc9841e1c06990"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9c85e9cc6acbd2a09142623712ff935"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ls_double_link_8c.html#ab9c85e9cc6acbd2a09142623712ff935">BackModeCompetence</a> (mode_t st_mode)</td></tr>
+<tr class="memdesc:ab9c85e9cc6acbd2a09142623712ff935"><td class="mdescLeft">&#160;</td><td class="mdescRight">BackModeCompetence <br/>
+通过st_mode与S_IF* 想与，然后与S_IF* 判断，如果是则存在此权限，与下方不同，此为传出数字权限  <a href="#ab9c85e9cc6acbd2a09142623712ff935">更多...</a><br/></td></tr>
+<tr class="separator:ab9c85e9cc6acbd2a09142623712ff935"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae30b060a26d7c4780785d1d10e9f42cd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ls_double_link_8c.html#ae30b060a26d7c4780785d1d10e9f42cd">BackMode</a> (mode_t st_mode, char mode[])</td></tr>
+<tr class="memdesc:ae30b060a26d7c4780785d1d10e9f42cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">BackMode <br/>
+通过st_mode与S_IF* 想与，然后与S_IF* 判断，如果是则存在此权限  <a href="#ae30b060a26d7c4780785d1d10e9f42cd">更多...</a><br/></td></tr>
+<tr class="separator:ae30b060a26d7c4780785d1d10e9f42cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa76693a3d437d10004316ca42535029f"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ls_double_link_8c.html#aa76693a3d437d10004316ca42535029f">BackAllTime</a> (time_t time, char timeback[])</td></tr>
+<tr class="separator:aa76693a3d437d10004316ca42535029f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1cb569eca37dddcc8e03c9a268644cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ls_double_link_8c.html#aa1cb569eca37dddcc8e03c9a268644cf">GetDoubleLink</a> (char path[])</td></tr>
+<tr class="memdesc:aa1cb569eca37dddcc8e03c9a268644cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">GetDoubleLink <br/>
+读取文件名以及各种信息，创建结构体插入到双向链表  <a href="#aa1cb569eca37dddcc8e03c9a268644cf">更多...</a><br/></td></tr>
+<tr class="separator:aa1cb569eca37dddcc8e03c9a268644cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf5088e61b616f77674f62a9ba3b86b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ls_double_link_8c.html#acf5088e61b616f77674f62a9ba3b86b7">display_usage</a> (void)</td></tr>
+<tr class="memdesc:acf5088e61b616f77674f62a9ba3b86b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">display_usage <br/>
+词频统计测试文件通过getopt函数的错误回显  <a href="#acf5088e61b616f77674f62a9ba3b86b7">更多...</a><br/></td></tr>
+<tr class="separator:acf5088e61b616f77674f62a9ba3b86b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97dc5d244dcdb842fab654a276322639"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ls_double_link_8c.html#a97dc5d244dcdb842fab654a276322639">convert_document</a> (void)</td></tr>
+<tr class="memdesc:a97dc5d244dcdb842fab654a276322639"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert_document <br/>
+shell 中 仿ls命令测试文件通过getopt函数的配置函数，并通过flag选择合适方式输出  <a href="#a97dc5d244dcdb842fab654a276322639">更多...</a><br/></td></tr>
+<tr class="separator:a97dc5d244dcdb842fab654a276322639"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ls_double_link_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a> (int argc, char **argv)</td></tr>
+<tr class="memdesc:a3c04138a5bfe5d72780bb7e82a18e627"><td class="mdescLeft">&#160;</td><td class="mdescRight">main <br/>
+通过getopt，实现程序通过参数进行运行目的  <a href="#a3c04138a5bfe5d72780bb7e82a18e627">更多...</a><br/></td></tr>
+<tr class="separator:a3c04138a5bfe5d72780bb7e82a18e627"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a6240b2c6874900a3e7b9257fb8ac4c14"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structglobal_args__t.html">globalArgs_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ls_double_link_8c.html#a6240b2c6874900a3e7b9257fb8ac4c14">globalArgs</a></td></tr>
+<tr class="separator:a6240b2c6874900a3e7b9257fb8ac4c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44789f54fc2524bad82f014f421cb4a4"><td class="memItemLeft" align="right" valign="top">struct winsize&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_ls_double_link_8c.html#a44789f54fc2524bad82f014f421cb4a4">size</a></td></tr>
+<tr class="separator:a44789f54fc2524bad82f014f421cb4a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>通用双向链表测试程序——shell命令ls的基本实现 <br/>
+使用DoubleLink.h这个sugarguo编写的通用双向链表的头文件接口，进行双向链表的操作测试。 </p>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo  <a href="#" onclick="location.href='mai'+'lto:'+'sug'+'ar'+'guo'+'@l'+'ive'+'.c'+'om'; return false;">sugar<span style="display: none;">.nosp@m.</span>guo@<span style="display: none;">.nosp@m.</span>live.<span style="display: none;">.nosp@m.</span>com</a> </dd></dl>
+<dl class="section date"><dt>日期</dt><dd>2016/03/15 20:00 </dd></dl>
+<dl class="section version"><dt>版本</dt><dd>v1.0.0 </dd></dl>
+<dl class="section copyright"><dt>版权所有</dt><dd>EmbedWay 恒为科技武汉研发中心 By:Sugarguo </dd></dl>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 中定义.</p>
+</div><h2 class="groupheader">函数说明</h2>
+<a class="anchor" id="aa76693a3d437d10004316ca42535029f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* BackAllTime </td>
+          <td>(</td>
+          <td class="paramtype">time_t&#160;</td>
+          <td class="paramname"><em>time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>timeback</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00505">505</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae30b060a26d7c4780785d1d10e9f42cd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int BackMode </td>
+          <td>(</td>
+          <td class="paramtype">mode_t&#160;</td>
+          <td class="paramname"><em>st_mode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>mode</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BackMode <br/>
+通过st_mode与S_IF* 想与，然后与S_IF* 判断，如果是则存在此权限 </p>
+<dl class="section date"><dt>日期</dt><dd>2016-03-16 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>st_mode </td><td>mode_t </td><td>传入的文件权限 </td></tr>
+<tr>
+<td>mode[] </td><td>char </td><td>文件权限的保存数组 </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>0 </td><td>int </td><td>判断是否为目录 </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>null </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000023">待办事项:</a></b></dt><dd>null </dd></dl>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00457">457</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab9c85e9cc6acbd2a09142623712ff935"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int BackModeCompetence </td>
+          <td>(</td>
+          <td class="paramtype">mode_t&#160;</td>
+          <td class="paramname"><em>st_mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>BackModeCompetence <br/>
+通过st_mode与S_IF* 想与，然后与S_IF* 判断，如果是则存在此权限，与下方不同，此为传出数字权限 </p>
+<dl class="section date"><dt>日期</dt><dd>2016-03-16 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>st_mode </td><td>mode_t </td><td>传入的文件权限 </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>0 </td><td>int </td><td>传出值为777 类型的权限 </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>null </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000022">待办事项:</a></b></dt><dd>null </dd></dl>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00404">404</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="addc5a2a4a20b168cadacc8924eb72cf7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CallBackCmpBytes </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>one</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>two</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CallBackCmpChar <br/>
+回调函数，比较内容是否相同，比较内容为文件信息结构体中的字节数 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">*one</td><td>比较的第一个内容 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*two</td><td>比较的第二个内容 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值为两个字母比较结果 </dd></dl>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00105">105</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0be317f6735aa68f2ec6a1703f3e028d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CallBackCmpFilename </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>one</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>two</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CallBackCmpChar <br/>
+回调函数，比较内容是否相同，比较内容为文件信息结构体中的文件名 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">*one</td><td>比较的第一个内容 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*two</td><td>比较的第二个内容 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值为两个字母比较结果 </dd></dl>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00068">68</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6f7941b8531ceb907228efb72f7d3ae8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CallBackCmpFilenameLong </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>one</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>two</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CallBackCmpChar <br/>
+回调函数，比较内容是否相同，比较内容为文件信息结构体中的文件名长短 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">*one</td><td>比较的第一个内容 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*two</td><td>比较的第二个内容 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值为两个字母比较结果 </dd></dl>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00080">80</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a32c1f7dc3877f4562dd467d3c0c46d1b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int CallBackCmpTime </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>one</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>two</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CallBackCmpChar <br/>
+回调函数，比较内容是否相同，比较内容为文件信息结构体中的时间 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">*one</td><td>比较的第一个内容 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*two</td><td>比较的第二个内容 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值为两个字母比较结果 </dd></dl>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00092">92</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8775c4ae4595df3010161a2aa793c9a3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CallBackShowFileInfo </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>datashow</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CallBackShowFileInfo <br/>
+不显示隐藏文件 </p>
+<dl class="section date"><dt>日期</dt><dd>2016-03-16 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*datashow </td><td>void </td><td>传入的文件信息 </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>null </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000018">待办事项:</a></b></dt><dd>null </dd></dl>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00200">200</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="aec0289cf14224c551286d03baba06346"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CallBackShowFileInfo_a </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>datashow</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CallBackShowFileInfo_a <br/>
+显示隐藏文件 </p>
+<dl class="section date"><dt>日期</dt><dd>2016-03-16 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*datashow </td><td>void </td><td>传入的文件信息 </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>null </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000017">待办事项:</a></b></dt><dd>null </dd></dl>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00130">130</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad98419f273ee1e8b2be132eecc9af3c5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CallBackShowFileInfoLong </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>datashow</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CallBackShowFileInfoLong <br/>
+长格式显示文件信息 </p>
+<dl class="section date"><dt>日期</dt><dd>2016-03-16 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>*datashow </td><td>void </td><td>传入的文件信息 </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>null </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000019">待办事项:</a></b></dt><dd>null </dd></dl>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00272">272</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a97dc5d244dcdb842fab654a276322639"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void convert_document </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>convert_document <br/>
+shell 中 仿ls命令测试文件通过getopt函数的配置函数，并通过flag选择合适方式输出 </p>
+<dl class="section date"><dt>日期</dt><dd>2016-03-16 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>null </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000026">待办事项:</a></b></dt><dd>null </dd></dl>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00624">624</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="acf5088e61b616f77674f62a9ba3b86b7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void display_usage </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>display_usage <br/>
+词频统计测试文件通过getopt函数的错误回显 </p>
+<dl class="section date"><dt>日期</dt><dd>2016-03-16 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>null </td><td>null </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>null </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000025">待办事项:</a></b></dt><dd>null </dd></dl>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00600">600</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a614c3a2e9dc58194a2dc9841e1c06990"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* FromGidToGName </td>
+          <td>(</td>
+          <td class="paramtype">gid_t&#160;</td>
+          <td class="paramname"><em>gid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>groupname</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>FromGidToGName <br/>
+通过getgrgid函数，读取文件所属组 </p>
+<dl class="section date"><dt>日期</dt><dd>2016-03-16 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>gid </td><td>gid_t </td><td>传入的文件权限 </td></tr>
+<tr>
+<td>groupname[] </td><td>char </td><td>文件属于的组 </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>groupname[] </td><td>char </td><td>文件属于的组 </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>null </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000021">待办事项:</a></b></dt><dd>null </dd></dl>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00372">372</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a56cfb46b8170954391fc7af903c93563"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* FromUidToUserName </td>
+          <td>(</td>
+          <td class="paramtype">uid_t&#160;</td>
+          <td class="paramname"><em>uid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>username</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>FromUidToUserName <br/>
+通过getgrgid函数，读取文件所属组 </p>
+<dl class="section date"><dt>日期</dt><dd>2016-03-16 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>uid </td><td>uid_t </td><td>传入的文件权限 </td></tr>
+<tr>
+<td>groupname[] </td><td>char </td><td>文件属于的用户名 </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>username[]</td><td>char </td><td>文件属于的用户 </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>null </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000020">待办事项:</a></b></dt><dd>null </dd></dl>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00339">339</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="aa1cb569eca37dddcc8e03c9a268644cf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_double_link_8c.html#a9fcabae42ec5545a4c8f778a68a4e578">DLNode</a>* GetDoubleLink </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>path</em>[]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>GetDoubleLink <br/>
+读取文件名以及各种信息，创建结构体插入到双向链表 </p>
+<dl class="section date"><dt>日期</dt><dd>2016-03-16 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>path[] </td><td>char </td><td>文件目录绝对路径（支持. ..） </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>*List </td><td>DLNode </td><td>返回的List指针 </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>null </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000024">待办事项:</a></b></dt><dd>null </dd></dl>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00531">531</a> 行定义.</p>
+
+</div>
+</div>
+<a class="anchor" id="a3c04138a5bfe5d72780bb7e82a18e627"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>main <br/>
+通过getopt，实现程序通过参数进行运行目的 </p>
+<dl class="section date"><dt>日期</dt><dd>2016-03-16 </dd></dl>
+<dl class="section author"><dt>作者</dt><dd>Sugarguo </dd></dl>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"></td><td>参数说明如下表： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of param  </th></tr>
+<tr>
+<td>argc </td><td>int </td><td>参数个数 </td></tr>
+<tr>
+<td>**argv </td><td>char </td><td>参数保存 </td></tr>
+</table>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>返回值说明如下： <table class="doxtable">
+<tr>
+<th>name </th><th>type </th><th>description of value  </th></tr>
+<tr>
+<td>null </td><td>int </td><td>EXIT_SUCCESS </td></tr>
+</table>
+</dd></dl>
+<dl class="section warning"><dt>警告</dt><dd>null </dd></dl>
+<dl class="section attention"><dt>注意</dt><dd>null </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>null </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000027">待办事项:</a></b></dt><dd>null </dd></dl>
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00697">697</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a class="anchor" id="a6240b2c6874900a3e7b9257fb8ac4c14"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="structglobal_args__t.html">globalArgs_t</a> globalArgs</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a44789f54fc2524bad82f014f421cb4a4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct winsize size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>在文件 <a class="el" href="_ls_double_link_8c_source.html">LsDoubleLink.c</a> 第 <a class="el" href="_ls_double_link_8c_source.html#l00058">58</a> 行定义.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="_ls_double_link_8c.html">LsDoubleLink.c</a></li>
+    <li class="footer">制作者
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>

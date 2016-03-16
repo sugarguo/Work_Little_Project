@@ -347,7 +347,6 @@ int GetStatistics( int hflag, int sflag, int oflag)
 	printf("Statistics time : %f \n\n", (float)(end_time - start_time) / CLOCKS_PER_SEC  );
 
 	DropList(List);
-	free(List);
 	
 	return 0;
 

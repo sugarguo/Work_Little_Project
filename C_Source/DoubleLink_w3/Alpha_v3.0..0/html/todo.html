@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>DoubleLink——Shell命令之ls初步模拟: 待办事项列表</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="favicon.ico"/></td>
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">DoubleLink——Shell命令之ls初步模拟
+   &#160;<span id="projectnumber">v1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>首页</span></a></li>
+      <li class="current"><a href="pages.html"><span>相关页面</span></a></li>
+      <li><a href="annotated.html"><span>结构体</span></a></li>
+      <li><a href="files.html"><span>文件</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="搜索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('todo.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>全部</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>结构体</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>文件</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>函数</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>变量</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>类型定义</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>页</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">待办事项列表 </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><dl class="reflist">
+<dt><a class="anchor" id="_todo000023"></a>全局 <a class="el" href="_ls_double_link_8c.html#ae30b060a26d7c4780785d1d10e9f42cd">BackMode</a>  (mode_t st_mode, char mode[])</dt>
+<dd>null  </dd>
+<dt><a class="anchor" id="_todo000022"></a>全局 <a class="el" href="_ls_double_link_8c.html#ab9c85e9cc6acbd2a09142623712ff935">BackModeCompetence</a>  (mode_t st_mode)</dt>
+<dd>null  </dd>
+<dt><a class="anchor" id="_todo000018"></a>全局 <a class="el" href="_ls_double_link_8c.html#a8775c4ae4595df3010161a2aa793c9a3">CallBackShowFileInfo</a>  (const void *datashow)</dt>
+<dd>null  </dd>
+<dt><a class="anchor" id="_todo000017"></a>全局 <a class="el" href="_ls_double_link_8c.html#aec0289cf14224c551286d03baba06346">CallBackShowFileInfo_a</a>  (const void *datashow)</dt>
+<dd>null  </dd>
+<dt><a class="anchor" id="_todo000019"></a>全局 <a class="el" href="_ls_double_link_8c.html#ad98419f273ee1e8b2be132eecc9af3c5">CallBackShowFileInfoLong</a>  (const void *datashow)</dt>
+<dd>null  </dd>
+<dt><a class="anchor" id="_todo000026"></a>全局 <a class="el" href="_ls_double_link_8c.html#a97dc5d244dcdb842fab654a276322639">convert_document</a>  (void)</dt>
+<dd>null  </dd>
+<dt><a class="anchor" id="_todo000001"></a>全局 <a class="el" href="_double_link_8c.html#aec0d0b1312b68b305a5ec9cd4ae3c6c3">CreateList</a>  ()</dt>
+<dd><p class="startdd">null </p>
+<p class="enddd">null  </p>
+</dd>
+<dt><a class="anchor" id="_todo000006"></a>全局 <a class="el" href="_double_link_8c.html#aa397cd5b88823e339f63a646497bd260">DeleteList</a>  (DLNode *List, void *data, int(*CallBackCmp)(const void *, const void *))</dt>
+<dd><p class="startdd">null </p>
+<p class="enddd">null  </p>
+</dd>
+<dt><a class="anchor" id="_todo000025"></a>全局 <a class="el" href="_ls_double_link_8c.html#acf5088e61b616f77674f62a9ba3b86b7">display_usage</a>  (void)</dt>
+<dd>null  </dd>
+<dt><a class="anchor" id="_todo000008"></a>全局 <a class="el" href="_double_link_8c.html#a15364937ad58d693d28671f21106d2ec">DropList</a>  (DLNode *List)</dt>
+<dd><p class="startdd">null </p>
+<p class="enddd">null  </p>
+</dd>
+<dt><a class="anchor" id="_todo000021"></a>全局 <a class="el" href="_ls_double_link_8c.html#a614c3a2e9dc58194a2dc9841e1c06990">FromGidToGName</a>  (gid_t gid, char groupname[])</dt>
+<dd>null  </dd>
+<dt><a class="anchor" id="_todo000020"></a>全局 <a class="el" href="_ls_double_link_8c.html#a56cfb46b8170954391fc7af903c93563">FromUidToUserName</a>  (uid_t uid, char username[])</dt>
+<dd>null  </dd>
+<dt><a class="anchor" id="_todo000024"></a>全局 <a class="el" href="_ls_double_link_8c.html#aa1cb569eca37dddcc8e03c9a268644cf">GetDoubleLink</a>  (char path[])</dt>
+<dd>null  </dd>
+<dt><a class="anchor" id="_todo000004"></a>全局 <a class="el" href="_double_link_8c.html#a3c75e226a401f131a4808dd22b234cca">InsertList</a>  (DLNode *List, void *data)</dt>
+<dd><p class="startdd">null </p>
+<p class="enddd">null  </p>
+</dd>
+<dt><a class="anchor" id="_todo000027"></a>全局 <a class="el" href="_ls_double_link_8c.html#a3c04138a5bfe5d72780bb7e82a18e627">main</a>  (int argc, char **argv)</dt>
+<dd>null  </dd>
+<dt><a class="anchor" id="_todo000002"></a>全局 <a class="el" href="_double_link_8c.html#ae1482f414cdc6afe58c99a2615487057">SearchList</a>  (DLNode *List, void *data, int(*CallBackCmp)(const void *, const void *))</dt>
+<dd><p class="startdd">null </p>
+<p class="enddd">null  </p>
+</dd>
+<dt><a class="anchor" id="_todo000003"></a>全局 <a class="el" href="_double_link_8c.html#a65b4c249cc137b01fc07b9f7ffbcf46e">SequenceList</a>  (DLNode *List, int flag, int(*CallBackCmp)(const void *, const void *))</dt>
+<dd><p class="startdd">null </p>
+<p class="enddd">null  </p>
+</dd>
+<dt><a class="anchor" id="_todo000007"></a>全局 <a class="el" href="_double_link_8c.html#ad469b48f5a27b46d067410a8ea2e3744">ShowList</a>  (DLNode *List, int judge, void(*CallBackShow)(const void *))</dt>
+<dd><p class="startdd">null </p>
+<p class="enddd">null  </p>
+</dd>
+<dt><a class="anchor" id="_todo000005"></a>全局 <a class="el" href="_double_link_8c.html#af42f761136d59421fe531e5f53db7d22">UpdateList</a>  (DLNode *List, void *data_search, void *data_change, int(*CallBackCmp)(const void *, const void *))</dt>
+<dd><p class="startdd">null </p>
+<p class="enddd">null </p>
+</dd>
+</dl>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">制作者
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
+</body>
+</html>
