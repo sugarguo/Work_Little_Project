@@ -140,7 +140,7 @@ void CallBackShowFileInfo_a(const void *datashow)
 			printf("\033[1;34m%*s\033[0m",-(globalArgs.pzlflag),data->filename);
 		else if(strstr(data->mode,"x"))
 			printf("\033[1;32m%*s\033[0m",-(globalArgs.pzlflag),data->filename);
-		else if(strstr(data->filename,"tar.gz"))
+		else if(strstr(data->filename,"tar.gz") || strstr(data->filename,".zip") || strstr(data->filename,".tgz"))
 			printf("\033[1;31m%*s\033[0m",-(globalArgs.pzlflag),data->filename);
 		else	
 			printf("%*s",-(globalArgs.pzlflag),data->filename);
@@ -162,7 +162,7 @@ void CallBackShowFileInfo_a(const void *datashow)
 			printf("\033[1;34m%*s\033[0m",-(globalArgs.pzlflag),data->filename);
 		else if(strstr(data->mode,"x"))
 			printf("\033[1;32m%*s\033[0m",-(globalArgs.pzlflag),data->filename);
-		else if(strstr(data->filename,"tar.gz"))
+		else if(strstr(data->filename,"tar.gz") || strstr(data->filename,".zip") || strstr(data->filename,".tgz"))
 			printf("\033[1;31m%*s\033[0m",-(globalArgs.pzlflag),data->filename);
 		else	
 			printf("%*s",-(globalArgs.pzlflag),data->filename);
@@ -212,7 +212,7 @@ void CallBackShowFileInfo(const void *datashow)
 			printf("\033[1;34m%*s\033[0m",-(globalArgs.pzlflag),data->filename);
 		else if(strstr(data->mode,"x"))
 			printf("\033[1;32m%*s\033[0m",-(globalArgs.pzlflag),data->filename);
-		else if(strstr(data->filename,"tar.gz"))
+		else if(strstr(data->filename,"tar.gz") || strstr(data->filename,".zip") || strstr(data->filename,".tgz"))
 			printf("\033[1;31m%*s\033[0m",-(globalArgs.pzlflag),data->filename);
 		else	
 			printf("%*s",-(globalArgs.pzlflag),data->filename);
@@ -234,7 +234,7 @@ void CallBackShowFileInfo(const void *datashow)
 			printf("\033[1;34m%*s\033[0m",-(globalArgs.pzlflag),data->filename);
 		else if(strstr(data->mode,"x"))
 			printf("\033[1;32m%*s\033[0m",-(globalArgs.pzlflag),data->filename);
-		else if(strstr(data->filename,"tar.gz"))
+		else if(strstr(data->filename,"tar.gz") || strstr(data->filename,".zip") || strstr(data->filename,".tgz"))
 			printf("\033[1;31m%*s\033[0m",-(globalArgs.pzlflag),data->filename);
 		else	
 			printf("%*s",-(globalArgs.pzlflag),data->filename);
@@ -282,11 +282,11 @@ void CallBackShowFileInfoLong(const void *datashow)
 					data->mode,data->link,data->username,data->groupname, \
 					data->bytes,data->mtime,data->filename);
 		else if(strstr(data->mode,"x"))
-			printf("%10s %3d %4s %4s %7d  %10s \033[1;32m%-s/ \033[0m\n", \
+			printf("%10s %3d %4s %4s %7d  %10s \033[1;32m%-s \033[0m\n", \
 					data->mode,data->link,data->username,data->groupname, \
 					data->bytes,data->mtime,data->filename);
-		else if(strstr(data->filename,"tar.gz"))
-			printf("%10s %3d %4s %4s %7d  %10s \033[1;31m%-s/ \033[0m\n", \
+		else if(strstr(data->filename,"tar.gz") || strstr(data->filename,".zip") || strstr(data->filename,".tgz"))
+			printf("%10s %3d %4s %4s %7d  %10s \033[1;31m%-s \033[0m\n", \
 					data->mode,data->link,data->username,data->groupname, \
 					data->bytes,data->mtime,data->filename);
 		else	
@@ -303,11 +303,11 @@ void CallBackShowFileInfoLong(const void *datashow)
 					data->mode,data->link,data->username,data->groupname, \
 					data->bytes,data->mtime,data->filename);
 		else if(strstr(data->mode,"x"))
-			printf("%10s %3d %4s %4s %7d  %10s \033[1;32m%-s/ \033[0m\n", \
+			printf("%10s %3d %4s %4s %7d  %10s \033[1;32m%-s \033[0m\n", \
 					data->mode,data->link,data->username,data->groupname, \
 					data->bytes,data->mtime,data->filename);
-		else if(strstr(data->filename,"tar.gz"))
-			printf("%10s %3d %4s %4s %7d  %10s \033[1;31m%-s/ \033[0m\n", \
+		else if(strstr(data->filename,"tar.gz") || strstr(data->filename,".zip") || strstr(data->filename,".tgz"))
+			printf("%10s %3d %4s %4s %7d  %10s \033[1;31m%-s \033[0m\n", \
 					data->mode,data->link,data->username,data->groupname, \
 					data->bytes,data->mtime,data->filename);
 		else	
@@ -460,19 +460,44 @@ int BackMode(mode_t st_mode,char mode[])
 
 	strcpy(mode , "+_________");
 
-
+	if(S_ISDIR(st_mode))
+	{
+		mode[0] = 'd';
+	}
+	else if(S_ISSOCK(st_mode))
+	{
+		mode[0] = 's';
+	}
+	else if(S_ISLNK(st_mode))
+	{
+		mode[0] = 'l';
+	}
+	else if(S_ISREG(st_mode))
+	{
+		mode[0] = '-';
+	}
+	else if(S_ISBLK(st_mode))
+	{
+		mode[0] = 'b';
+	}
+	else
+	{
+		mode[0] = '+';
+	}
+	/*
 	if ((st_mode & S_IFSOCK) == S_IFSOCK)
 		mode[0] = 's';
-	else if((st_mode & S_IFREG) == S_IFREG)
-		mode[0] = '-';
 	else if((st_mode & S_IFLNK) == S_IFLNK)
 		mode[0] = 'l';
+	else if((st_mode & S_IFREG) == S_IFREG)
+		mode[0] = '-';
 	else if((st_mode & S_IFBLK) == S_IFBLK)
 		mode[0] = 'b';
 	else if((st_mode & S_IFDIR) == S_IFDIR) //S_ISDIR(statbuf.st_mode)
 		mode[0] = 'd';
 	else
 		mode[0] = '+';
+	*/
 
 	if ((st_mode & S_IRUSR) == S_IRUSR)
 		mode[1] = 'r';
